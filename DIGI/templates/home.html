@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<!-- POST BOX -->
+
+
+  <!-- Profile IMAGE -->
+
+
+<form action="" method="post">
+    <h2>Whats on your mind?</h2>
+    <textarea rows = "5" cols = "60" name = "description">
+       Enter details here...
+    </textarea><br>
+    <input type = "submit" value = "Post">
+ </form>
+
+
+<!-- TIMELINE FEED -->
+<!-- Timelime will consist of other users -->
+<h2>TIMELINE</h2>
+  {% for feed in feed %}
+    <article class="media content-section">
+      <img class="rounded-circle article-img" src="{{ feed.author.profile.image.url }}">
+      <div class="media-body">
+        <div class="article-metadata">
+          <a class="mr-2" href="#">{{ feed.author }}</a>
+          <small class="text-muted">{{ feed.date_posted|date:"F d, Y" }}</small>
+        </div>
+        <h2><a class="article-content" href="{% url 'post_detail' %}">{{ feed.content }}</a></h2>
+      </div>
+    </article>
+  {% endfor %}
+{% endblock content %}
+

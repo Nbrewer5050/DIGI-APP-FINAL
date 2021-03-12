@@ -1,0 +1,1385 @@
+
+
+
+
+
+
+
+<!doctype html>
+
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+
+<head data-template-set="html5-reset" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+    <meta charset="utf-8">
+
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"7c5562d07b",applicationID:"524260076"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,w=["click","keydown","mousedown","pointerdown","touchstart"];w.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?u(e,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){e&&a&&e(n,r,i);for(var c=t(i),f=v(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[h[n]];return p&&p.push([b,n,r,c]),c}}function o(e,t){y[e]=v(e).concat(t)}function m(e,t){var n=y[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return y[e]||[]}function g(e){return p[e]=p[e]||i(n)}function w(e,t){s(e,function(e,n){t=t||"feature",h[n]=t,t in d||(d[t]=[])})}var y={},h={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:w,abort:c,aborted:!1};return b}function o(e){return u(e,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=e("gos"),s=e(6),d={},p={},l=t.exports=i();t.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(y,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&&o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var w=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1198.min.js"},h=v&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:w,features:{},xhrWrappable:h,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var x=0},{}],"wrap-function":[function(e,t,n){function r(e,t){function n(t,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],e)}c(n+"start",[o,a,f],s,u);try{return p=t.apply(a,o)}catch(m){throw c(n+"err",[o,a,m],s,u),m}finally{c(n+"end",[o,a,p],s,u)}}return a(t)?t:(n||(n=""),nrWrapper[p]=t,o(t,nrWrapper,e),nrWrapper)}function r(e,t,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<t.length;u++)f=t[u],c=e[f],a(c)||(e[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!m||t){var c=m;m=!0;try{e.emit(n,r,o,t,a)}catch(f){i([f,n,r,o],e)}m=c}}return e||(e=s),n.inPlace=r,n.flag=p,n}function i(e,t){t||(t=s);try{t.emit("internal-error",e)}catch(n){}}function o(e,t,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(e);return r.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(o){i([o],n)}for(var a in e)l.call(e,a)&&(t[a]=e[a]);return t}function a(e){return!(e&&e instanceof Function&&e.apply&&!e[p])}function c(e,t){var n=t(e);return n[p]=e,o(e,n,s),n}function f(e,t,n){var r=e[t];e[t]=c(r,n)}function u(){for(var e=arguments.length,t=new Array(e),n=0;n<e;++n)t[n]=arguments[n];return t}var s=e("ee"),d=e(7),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;t.exports=r,t.exports.wrapFunction=c,t.exports.wrapInPlace=f,t.exports.argsToArray=u},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"7c5562d07b","applicationID":"524260076","transactionName":"blwBMURZXRAFURVeWVcWJRBYW0cKC1xOQ15cWBcJV1ZHCgccF15TTkpNBERMWgAIV1tWRE1QAAlTZ0EMEUYERQ==","queueTime":0,"applicationTime":290,"agent":""}</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>How Aristotle Created the Computer - The Atlantic</title>
+
+    
+
+        
+        
+        <link rel="shortcut icon" href="https://cdn.theatlantic.com/tng/static/theatlantic/img/lacroix/favicon.fb04af6390eb.ico">
+        <link rel="apple-touch-icon" href="https://cdn.theatlantic.com/tng/static/theatlantic/img/lacroix/apple-touch-icon-iphone.50541ad29f2c.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.theatlantic.com/tng/static/theatlantic/img/lacroix/apple-touch-icon-ipad.d309494b8612.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="https://cdn.theatlantic.com/tng/static/theatlantic/img/lacroix/apple-touch-icon-iphone-retina.5154a7d87073.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="https://cdn.theatlantic.com/tng/static/theatlantic/img/lacroix/apple-touch-icon-ipad-retina.398a2c61e146.png">
+        
+
+        <meta name="application-name" content="">
+        <meta name="msapplication-TileColor" content="">
+        <meta name="msapplication-TileImage" content="">
+
+        
+        <link rel="alternate" type="application/rss+xml" title="The Atlantic" href="/feed/all/" />
+        <link rel="alternate" type="application/rss+xml" title="Best of The Atlantic" href="/feed/best-of/" />
+        
+        
+
+        
+        
+        <meta name="keywords" content="The Atlantic, The Atlantic Magazine, TheAtlantic.com, Atlantic, news, opinion, breaking news, analysis, commentary, business, politics, culture, international, science, technology, national and life">
+        <meta name="description" content="The philosophers he influenced set the stage for the technological revolution that remade our world.">
+        <link rel="image_src" href="https://cdn.theatlantic.com/thumbor/p_75j-lVEGipgyUj4m7I6LP6Z8o=/0x147:2000x1188/960x500/media/img/mt/2017/03/Aristotle1/original.jpg">
+
+        
+        <meta name="referrer" content="unsafe-url" />
+
+        <meta property="og:site_name" content="The Atlantic">
+        <meta property="og:locale" content="en_US">
+        <meta property="fb:admins" content="577048155,17301937">
+        <meta property="fb:app_id" content="100770816677686">
+
+        
+        <meta property="fb:pages" content="29259828486,128344747344340,457711054591520,128377530562508,370457103090695,1631141167169115,1468531833474495,1061579677251147,148681772342453,1510507419185410" />
+
+        <link href="https://plus.google.com/109258622984321091629" rel="publisher" />
+        <meta name="p:domain_verify" content="68e1a0361a557708fefc992f3309ed70"/>
+
+        <meta property="og:title" content="How Aristotle Created the Computer">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https://www.theatlantic.com/technology/archive/2017/03/aristotle-computer/518697/" />
+
+        
+            <link rel="canonical" href="https://www.theatlantic.com/technology/archive/2017/03/aristotle-computer/518697/" />
+        
+
+        <meta property="og:image" content="https://cdn.theatlantic.com/thumbor/p_75j-lVEGipgyUj4m7I6LP6Z8o=/0x147:2000x1188/960x500/media/img/mt/2017/03/Aristotle1/original.jpg">
+        <meta property="og:description" content="The philosophers he influenced set the stage for the technological revolution that remade our world.">
+
+        
+        <meta property="article:opinion" content="false">
+        <meta property="article:content_tier" content="metered">
+        
+
+        
+        
+            
+        
+        <meta name="author" content="Chris Dixon" />
+        
+
+        <meta name="twitter:site" content="@theatlantic" />
+        <meta name="twitter:domain" content="theatlantic.com" />
+        
+        <meta name="twitter:card" content="summary_large_image" />
+        
+        <meta name="twitter:image:src" content="https://cdn.theatlantic.com/thumbor/p_75j-lVEGipgyUj4m7I6LP6Z8o=/0x147:2000x1188/960x500/media/img/mt/2017/03/Aristotle1/original.jpg" />
+        
+        
+
+        
+            
+                <meta name="ROBOTS" content="INDEX, FOLLOW">
+            
+        
+
+    
+
+    
+        <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "The Atlantic",
+  "url": "https://www.theatlantic.com",
+  "logo": "https://cdn.theatlantic.com/assets/media/files/atlantic-logo--224x224.png",
+  "sameAs" : [
+    "https://www.facebook.com/TheAtlantic",
+    "https://twitter.com/theatlantic",
+    "https://plus.google.com/109258622984321091629/posts"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "WebSite",
+  "name" : "The Atlantic",
+  "url" : "https://www.theatlantic.com",
+  "potentialAction" : {
+    "@type" : "SearchAction",
+    "target" : "https://www.theatlantic.com/search/?q={search_term}",
+    "query-input" : "required name=search_term"
+  }
+}
+</script>
+
+        
+            
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "NewsArticle",
+  "headline": "How Aristotle Created the Computer",
+  "url": "https://www.theatlantic.com/technology/archive/2017/03/aristotle-computer/518697/",
+  
+  "image": "https://cdn.theatlantic.com/assets/media/img/mt/2017/03/Aristotle1/original.jpg",
+  
+  
+  "thumbnailUrl": "https://cdn.theatlantic.com/thumbor/ip2_tgXGshbqtJNBkAsNYraNkO4=/0x48:1999x1285/210x130/media/img/mt/2017/03/Aristotle1/original.jpg",
+  
+  "datePublished": "2017-03-20T08:00:00-0400",
+  "dateModified": "2017-07-10T10:32:59-0400",
+  "articleSection": "Technology",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.theatlantic.com/technology/archive/2017/03/aristotle-computer/518697/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "The Atlantic",
+    "url": "https://www.theatlantic.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cdn.theatlantic.com/assets/media/files/atlantic-logo--224x224.png"
+    }
+  },
+  "author": [
+      {
+        "@type": "Person",
+        "name": "Chris Dixon",
+        "sameAs": "https://www.theatlantic.com/author/chris-dixon/"
+      }
+  ],
+  "creator": [
+      {
+        "@type": "Person",
+        "name": "Chris Dixon",
+        "sameAs": "https://www.theatlantic.com/author/chris-dixon/"
+      }
+  ]
+}
+</script>
+
+
+
+
+        
+    
+
+    
+<meta property="krux:title" content="How Aristotle Created the Computer">
+<meta property="krux:description" content="The philosophers he influenced set the stage for the technological revolution that remade our world.">
+
+<meta property="article:published_time" content="2017-03-20T08:00:00" />
+<meta property="article:modified_time" content="2017-07-10T10:32:59" />
+
+
+    <link rel="amphtml" href="https://amp.theatlantic.com/amp/article/518697/" />
+
+
+
+
+
+    <meta property="ia:markup_url" content="https://www.theatlantic.com/facebook-instant/article/518697/">
+
+
+
+
+    
+    <style>@font-face{font-display:swap;font-family:AGaramondPro;font-style:italic;font-weight:600;src:local("Adobe Garamond Pro SemiboldItalic"),url(https://www.theatlantic.com/packages/fonts/garamond/AGaramondPro-SemiboldItalic.woff2) format("woff2"),url(https://www.theatlantic.com/packages/fonts/garamond/AGaramondPro-SemiboldItalic.woff) format("woff")}@font-face{font-display:swap;font-family:AGaramondPro;font-style:italic;font-weight:700;src:local("Adobe Garamond Pro BoldItalic"),url(https://www.theatlantic.com/packages/fonts/garamond/AGaramondPro-BoldItalic.woff2) format("woff2"),url(https://www.theatlantic.com/packages/fonts/garamond/AGaramondPro-BoldItalic.woff) format("woff")}@font-face{font-display:swap;font-family:AGaramondPro;font-style:normal;font-weight:400;src:local("Adobe Garamond Pro Regular"),url(https://www.theatlantic.com/packages/fonts/garamond/AGaramondPro-Regular.woff2) format("woff2"),url(https://www.theatlantic.com/packages/fonts/garamond/AGaramondPro-Regular.woff) format("woff")}@font-face{font-display:swap;font-family:AGaramondPro;font-style:normal;font-weight:600;src:local("Adobe Garamond Pro Semibold"),url(https://www.theatlantic.com/packages/fonts/garamond/AGaramondPro-Semibold.woff2) format("woff2"),url(https://www.theatlantic.com/packages/fonts/garamond/AGaramondPro-Semibold.woff) format("woff")}@font-face{font-display:swap;font-family:AGaramondPro;font-style:normal;font-weight:700;src:local("Adobe Garamond Pro Bold"),url(https://www.theatlantic.com/packages/fonts/garamond/AGaramondPro-Bold.woff2) format("woff2"),url(https://www.theatlantic.com/packages/fonts/garamond/AGaramondPro-Bold.woff) format("woff")}@font-face{font-display:swap;font-family:AGaramondPro;font-style:italic;font-weight:400;src:local("Adobe Garamond Pro Italic"),url(https://www.theatlantic.com/packages/fonts/garamond/AGaramondPro-Italic.woff2) format("woff2"),url(https://www.theatlantic.com/packages/fonts/garamond/AGaramondPro-Italic.woff) format("woff")}@font-face{font-display:swap;font-family:Atlantic Serif;font-style:normal;font-weight:400;src:url(https://www.theatlantic.com/packages/fonts/atlantic/Atlantic-Serif.woff2) format("woff2"),url(https://www.theatlantic.com/packages/fonts/atlantic/Atlantic-Serif.woff) format("woff")}@font-face{font-display:swap;font-family:Druk;font-style:normal;font-weight:800;src:url(https://cdn.theatlantic.com/tng/static/frontend/dist/theatlantic/fonts/druk/Druk-Heavy-Web.73c680315608.woff2) format("woff2"),url(https://cdn.theatlantic.com/tng/static/frontend/dist/theatlantic/fonts/druk/Druk-Heavy-Web.de0a29cd8676.woff) format("woff")}@font-face{font-display:swap;font-family:Graphik;font-style:normal;font-weight:400;src:url(https://www.theatlantic.com/packages/fonts/graphik/Graphik-Regular-Web.woff2) format("woff2"),url(https://www.theatlantic.com/packages/fonts/graphik/Graphik-Regular-Web.woff) format("woff")}@font-face{font-display:swap;font-family:Graphik;font-style:normal;font-weight:600;src:url(https://www.theatlantic.com/packages/fonts/graphik/Graphik-Semibold-Web.woff2) format("woff2"),url(https://www.theatlantic.com/packages/fonts/graphik/Graphik-Semibold-Web.woff) format("woff")}@font-face{font-display:swap;font-family:Lyon Text;font-stretch:normal;font-style:normal;font-weight:400;src:url(https://cdn.theatlantic.com/tng/static/frontend/dist/theatlantic/fonts/lyon/Lyon-Text-Regular.952052f78892.woff2) format("woff2"),url(https://cdn.theatlantic.com/tng/static/frontend/dist/theatlantic/fonts/lyon/Lyon-Text-Regular.840c78933255.woff) format("woff")}@font-face{font-display:swap;font-family:Lyon Text;font-stretch:normal;font-style:italic;font-weight:400;src:url(https://cdn.theatlantic.com/tng/static/frontend/dist/theatlantic/fonts/lyon/Lyon-Text-Regular-Italic.1f3d1b40255e.woff2) format("woff2"),url(https://cdn.theatlantic.com/tng/static/frontend/dist/theatlantic/fonts/lyon/Lyon-Text-Regular-Italic.ce9636f76967.woff) format("woff")}@font-face{font-display:swap;font-family:Noe Text;font-stretch:normal;font-style:normal;font-weight:900;src:url(https://cdn.theatlantic.com/tng/static/frontend/dist/theatlantic/fonts/noe/Noe-Text-Black.b05d72fe331d.woff2) format("woff2"),url(https://cdn.theatlantic.com/tng/static/frontend/dist/theatlantic/fonts/noe/Noe-Text-Black.2dcd42be9f8e.woff) format("woff")}@font-face{font-display:swap;font-family:Noe Text;font-stretch:normal;font-style:italic;font-weight:900;src:url(https://cdn.theatlantic.com/tng/static/frontend/dist/theatlantic/fonts/noe/Noe-Text-Black-Italic.3e111503a215.woff2) format("woff2"),url(https://cdn.theatlantic.com/tng/static/frontend/dist/theatlantic/fonts/noe/Noe-Text-Black-Italic.0086b1b36dfc.woff) format("woff")}@font-face{font-display:swap;font-family:Goldwyn;font-style:normal;font-weight:400;src:url(https://www.theatlantic.com/packages/fonts/goldwyn/goldwyn-medium.woff2) format("woff2"),url(https://www.theatlantic.com/packages/goldwyn/goldwyn-medium.woff) format("woff")}</style>
+
+    
+    
+        
+            <link href="https://cdn.theatlantic.com/tng/static/theatlantic/css/lacroix-site.min.1f578652ad09.css" rel="stylesheet" type="text/css" />
+        
+    
+
+    
+
+  
+    <style type="text/css" media="screen">
+        #article .lead-img .img {
+            padding-bottom: 66.66666666666666%;
+        }
+
+        .article-wide #article .article-cover,
+        .article-wide #article .ad-article-wrapper {
+            padding-top: 66.66666666666666%;
+            padding-top: -webkit-calc(66.66666666666666% + 35px);
+            padding-top: calc(66.66666666666666% + 35px);
+
+        }
+
+        .article-wide #article .boxtop-most-popular {
+            margin-top: 66.66666666666666%;
+            margin-top: -webkit-calc(66.66666666666666% + 35px);
+            margin-top: calc(66.66666666666666% + 35px);
+        }
+
+        @media (max-width: 680px) {
+            .article-wide #article .article-cover,
+            .article-wide #article .ad-article-wrapper {
+                padding-top: 66.66666666666666%;
+                padding-top: -webkit-calc(66.66666666666666% + 20px);
+                padding-top: calc(66.66666666666666% + 20px);
+            }
+
+            .article-wide #article .boxtop-most-popular {
+                margin-top: 66.66666666666666%;
+                margin-top: -webkit-calc(66.66666666666666% + 20px);
+                margin-top: calc(66.66666666666666% + 20px);
+            }
+        }
+
+        @media (max-width: 1086px) {
+            
+            .article-feature #article .article-cover {
+                padding-top: 66.66666666666666%;
+            }
+        }
+    </style>
+    
+
+
+
+
+    
+        <script id="page_meta" type="application/insights+json">
+          {"adtargeting": {"watson_categories": ["/science/social science/philosophy", "/science/mathematics", "/science/mathematics/geometry"], "grapeshot_segments": ["neg_fx", "gs_education", "gs_education_misc", "an_bankofamerica_negative", "gs_tech", "pos_alcohol", "pos_citibank", "pos_disney_fxfargo", "pos_hermes", "pos_mobkoi", "an_fidelity_safe", "ap_citi_banking_safe", "ap_citi_hurricanes", "ap_citi_naacp_safe", "ap_citi_sex_safe", "ap_citi_transportation_safe", "ap_fidelity_safe", "ap_gwp", "ap_texas_shooting_safe", "general_safe_gv", "gs_tech_computing", "gs_science", "neg_apple_1", "gs_science_misc", "an_apple_negative"]}, "watson": {"top_category": {"full": "/science/social science/philosophy", "one": "science", "two": "social science", "three": "philosophy", "four": null}, "categories": ["/science/social science/philosophy", "/science/mathematics", "/science/mathematics/geometry"], "concepts": ["Logic", "Mathematics", "Mathematical logic"], "entities": ["Turing", "Claude Shannon", "Aristotle", "Gottlob Frege", "Bertrand Russell", "George Boole", "David Hilbert", "John Von Neumann"], "keywords": ["logic", "mathematical logic", "decision problem", "electrical circuits", "Von Neumann", "arbitrary mathematical statement", "Shannon", "logical structure", "Boolean logic", "formal logic", "Frege", "mathematics", "arithmetical logic units", "Shannon\u2019s paper", "Hilbert\u2019s program", "human mind", "logic treatise Begriffsschrift", "Gottlob Frege", "Frege\u2019s logic", "logical words", "philosopher Gottlob Frege", "George Boole", "deductive logic", "inductive logic", "iPhone.Mathematical logic", "Aristotle\u2019s logic", "true mathematical statements", "David Hilbert", "basic data type", "neural networks", "typical electrical-engineering paper", "electrical engineering student", "undergraduate philosophy class", "mathematician David Hilbert", "logical mistakes", "simple calculating machine", "best known way", "Alan Turing", "electrical relays", "Aristotelean logic", "Leibniz\u2019s dream", "logical work", "hopelessly abstract subject", "theory underlying circuit", "Computable Numbers", "science", "Turing\u2019s paper", "symbolic logic", "systematic theory", "World War"]}, "grapeshot_last_updated": "2021-02-18T03:20:34.943484+00:00", "meta": {"top_category_full": "/science/social science/philosophy", "top_category_tier_1": "science", "top_category_tier_2": "social science", "top_category_tier_3": "philosophy", "top_category_tier_4": null, "primary_channel": "technology", "editorial_categories": null, "view": "amp", "report": null, "authors": "chris dixon", "primary_author": "chris dixon", "secondary_author": null, "article_id": 518697, "content_headline": "how aristotle created the computer", "content_headline_capitalized": "How Aristotle Created the Computer", "content_headline_character_count": 34, "content_headline_word_count": 5, "first_published_date": "2017-03-20", "first_published_time": "08:00", "first_published_datetime": "2017-03-20T08:00:00-04:00", "last_updated_datetime": "2017-07-10T10:32:59-04:00", "is_404": false, "social_title": "how aristotle created the computer", "social_description": "the philosophers he influenced set the stage for the technological revolution that remade our world.", "content_article_word_count": 4007, "content_platform": "web", "grapeshot_segments": "neg_fx,gs_education,gs_education_misc,an_bankofamerica_negative,gs_tech,pos_alcohol,pos_citibank,pos_disney_fxfargo,pos_hermes,pos_mobkoi,an_fidelity_safe,ap_citi_banking_safe,ap_citi_hurricanes,ap_citi_naacp_safe,ap_citi_sex_safe,ap_citi_transportation_safe,ap_fidelity_safe,ap_gwp,ap_texas_shooting_safe,general_safe_gv,gs_tech_computing,gs_science,neg_apple_1,gs_science_misc,an_apple_negative", "watson_categories": "/science/social science/philosophy;/science/mathematics;/science/mathematics/geometry", "editorial_project": null, "channels": "technology", "content_subtype": "blog"}, "article_word_count": 4007, "article_last_updated": "2017-07-10T10:32:59-04:00", "watson_last_updated": "2018-10-02T14:58:11.990620+00:00"}
+        </script>
+    
+
+    <script>
+        var Atlantic = {};
+
+        
+            
+                Atlantic.page_meta = (function(){
+                    var page_meta = document.getElementById('page_meta');
+                    var data = {};
+                    try {
+                        data = JSON.parse(page_meta.textContent);
+                    } catch (err) {}
+                    return data;
+                })();
+            
+        
+        Atlantic.page_info = {"article_id": 518697, "article_type": "blog", "authors": ["Chris Dixon"], "canonical_url": "https://www.theatlantic.com/technology/archive/2017/03/aristotle-computer/518697/", "categories": [], "channels": ["technology"], "cookie_domain": ".theatlantic.com", "date": "2017-03-20T08:00:00-04:00", "days_since_published": 0, "description": "The philosophers he influenced set the stage for the technological revolution that remade our world.", "domain": "www.theatlantic.com", "has_meter": true, "hours_since_published": 0, "image": "https://cdn.theatlantic.com/thumbor/p_75j-lVEGipgyUj4m7I6LP6Z8o=/0x147:2000x1188/960x500/media/img/mt/2017/03/Aristotle1/original.jpg", "is_404": false, "is_accounts": false, "is_amp": false, "is_features": false, "is_freelance": true, "is_instant": false, "is_magazine": false, "is_opinion_article": false, "is_sponsored": false, "is_tng": true, "kicker": "", "layout": "feature", "og_type": "article", "original_url": "https://www.theatlantic.com/technology/archive/2017/03/aristotle-computer/518697/", "path": "/technology/archive/2017/03/aristotle-computer/518697/", "primary_channel": "technology", "report": "", "request": {"is_gdpr": false, "experiment_id": null, "experiment_group": null, "experiment": null}, "seo_title": "How Aristotle Created the Computer", "share_dek": "The philosophers he influenced set the stage for the technological revolution that remade our world.", "share_text": "How Aristotle created the computer, by @cdixon", "share_title": "How Aristotle Created the Computer", "show_nudges": true, "site_refresh": true, "site_url": "https://www.theatlantic.com", "tags": [], "template": "theatlantic/article.html", "title": "How Aristotle Created the Computer", "token": "4a267a9f318c4d13a45efcdfcbb94bb86b995416", "trump_channel": "technology", "twitter_image": "https://cdn.theatlantic.com/thumbor/p_75j-lVEGipgyUj4m7I6LP6Z8o=/0x147:2000x1188/960x500/media/img/mt/2017/03/Aristotle1/original.jpg", "url": "https://www.theatlantic.com/technology/archive/2017/03/aristotle-computer/518697/", "version": "1.0.0", "view": "article"};
+        Atlantic.STATIC_URL = "https://cdn.theatlantic.com/tng/static/";
+        Atlantic.MEDIA_URL = "https://cdn.theatlantic.com/assets/media/";
+        Atlantic.PROFILES_STATICFILES = {"JS": "https://cdn.theatlantic.com/tng/static/janrain/profiles.03b803c02a20.js", "CSS": ["https://cdn.theatlantic.com/tng/static/theatlantic/css/profiles.min.1862f9a97307.css"]};
+        Atlantic.SESSION_URLS = {
+            "session_start": "https://accounts.theatlantic.com/api/1.0/session_start/",
+            "session_end": "https://accounts.theatlantic.com/api/1.0/session_end/"
+        };
+        Atlantic.GTM = {
+            quantcastLabels: ["The Atlantic.Editorial.Title.How Aristotle Created the Computer", "The Atlantic.Editorial.Author.Chris Dixon", "The Atlantic.Editorial.Channel.technology"],
+            simplereach: {"conf": {"url": "https://www.theatlantic.com/technology/archive/2017/03/aristotle-computer/518697/", "page_url": "https://www.theatlantic.com/technology/archive/2017/03/aristotle-computer/518697/", "title": "How Aristotle Created the Computer", "date": "2017-03-20T08:00:00-04:00", "authors": ["chris-dixon"], "channels": ["technology"], "tags": []}, "is_404": false}
+        };
+    </script>
+    
+
+    
+
+<link rel="preload" as="script" href="https://www.googletagservices.com/tag/js/gpt.js" onload="performance.mark('atl:gpt_preloaded');">
+
+<link rel="preload" as="script" href="https://z.moatads.com/thewire746082389130/moatad.js" onload="performance.mark('atl:moat_preloaded');">
+
+    
+        <link rel="preload" as="script" href="https://www.theatlantic.com/packages/adsjs/prebid.js" onload="performance.mark('atl:prebid_preloaded');">
+    
+
+    
+        <link rel="preload" as="script" href="https://c.amazon-adsystem.com/aax2/apstag.js" onload="performance.mark('atl:amazon_preloaded');">
+    
+
+
+
+
+    <script type="text/javascript" src="https://cdn.theatlantic.com/tng/static/theatlantic/js/head.min.1f93f1a033f4.js" charset="utf-8"></script>
+    
+
+
+
+
+
+    
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-56LJR35');</script>
+
+
+
+
+    
+    <script src="https://cdn.theatlantic.com/tng/static/frontend/dist/theatlantic/js/polyfill.8a1a407318b2.js" nomodule></script>
+    <script src="https://cdn.theatlantic.com/tng/static/frontend/jspm_packages/system.822e0a71e40b.js"></script>
+</head>
+
+<body
+    id=""
+    class="article-feature header-extended header-flag "
+    data-page-type="article"
+    
+>
+
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-56LJR35" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+
+
+<div class="u-hidden"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-1{fill-rule:evenodd}</style></defs><symbol id="icon-arrow-right" viewBox="0 0 11 18"><path d="M1 1l8 7.928L1.267 17" fill-rule="evenodd"/></symbol><symbol id="icon-atlantic-big-a" viewBox="0 0 87.83 134"><path d="M24.48 95.13c-.56 0-.74-.37-.74-.93l13.08-55.88c.19-.94.93-.94 1.12 0L50.09 94.2c0 .56-.19.93-.75.93zM48.22.19a22.54 22.54 0 0 1-7.66 5.05c-.75.19-.94.37-1.13 1.12l-26.72 112.5c-2 9-4.67 10.66-11.77 11.22a.88.88 0 0 0-.94.93v2.06a.88.88 0 0 0 .92.93h25.6a.88.88 0 0 0 .93-.93V131a.88.88 0 0 0-.93-.93c-9.53 0-10.47-2.81-8.6-10.66l4.49-19.25a1.18 1.18 0 0 1 1.12-.93h26.74a1.19 1.19 0 0 1 1.13.93l5 23.18c1.12 5-.75 6.17-7.1 6.73a.88.88 0 0 0-.93.93v2.06a.88.88 0 0 0 .93.93h37.62a.88.88 0 0 0 .94-.93V131a.88.88 0 0 0-.94-.93c-5.79-.56-8.22-1.5-9.34-6.73L49.34.57c-.19-.56-.75-.75-1.12-.38"/></symbol><symbol id="icon-atlantic-wordmark" viewBox="0 0 214 33.24"><path d="M39.39 13.2c-2.4 0-4.43 1.82-7 5.32-1.18 1.64-2.7 4-3.37 5-.38.51-.68.43-.47-.12l1.78-4.56 6.36-17.5C37 .62 34.46-.25 34 .62v.09c-1.09 2.32-3.12 3.08-6.75 2.95S16.32 1.52 10.8 1.52C3.88 1.52 0 5.78 0 10.8c0 2.82 1.85 4.64 4.34 4.55a2.27 2.27 0 0 0 2.41-1.81 1.2 1.2 0 0 0-1.56-1.43c-2.45.51-3.29-1.18-3.29-2.49 0-3.12 2.66-5.44 8.22-5.44 1.43 0 4.22.34 7.17.67-3.75 11.3-7.55 21.77-8.48 24.25a2.07 2.07 0 0 1-1.35 1.44c-1.34.42-1.77.46-2.61.67-1.27.3-1.06 1.35-.17 1.31 1.6-.09 3.67-.3 5.31-.3 2 0 5.61.17 6.16.21 1 .09 1.14-1.14.3-1.26-.59-.09-1.56-.25-2.49-.38-1.1-.13-1.43-.59-1.18-1.48.55-1.47 7-20.11 8.27-24 2 .25 3.71.42 4.84.5 2.33.14 4.57 0 6.5-1.41l-5.1 14.4-4.47 12.33c-.76 2 2.1 2.15 2.74.93a81.64 81.64 0 0 1 7.63-12.36c1.86-2.7 3.59-4.31 4.81-4.31.93 0 1.47.51 1.47 1.65 0 1.52-.71 3.88-2.15 7.89-1.89 5.23-2.61 6.62-3.24 6.66s-1.86-1.52-2.53-1.69a1.39 1.39 0 0 0-1.65.72c-.34.59-.12 2.49 2.74 2.62 3.42.16 6.33-3.34 8.35-8.94 1.39-3.8 1.73-5.74 1.73-7.13 0-2.7-1.26-3.97-3.33-3.97zM97.29 31.29c-2.15-.5-3-1.3-3-2.15l.09-1.77c0-1.3 1-20.49 1.22-23.36.17-2.11-2.24-2-3.25-.76l-2 2.57C87.89 8.9 78 21.68 73.17 27.67A11.5 11.5 0 0 1 68 31.25c-.8.21-.72 1.06.17 1.06.71 0 2.82-.25 4.38-.25s4.43.12 5.15.16 1-.76 0-1c-2-.59-3-1-3-1.52s.46-1.22 1.56-2.74c.84-1.18 2.86-3.84 5.1-6.79H91c-.21 4.05-.46 8.31-.5 9.15a1.14 1.14 0 0 1-.93 1.14l-2.15.63c-.59.17-.85 1.27.08 1.23 2.11-.13 3.88-.3 4.81-.3 1.39 0 3.75.3 4.85.34s.94-.85.13-1.07zm-6-15.47c0 .76-.09 1.6-.13 2.49h-8.25c3.84-5.07 7.89-10.38 8.23-10.89s.67-.25.63.13c-.13 1.86-.34 5.27-.5 8.27zM55.08 13.5c-3.67-.17-7.76 4.09-9.7 10.5-1.9 6.2.21 8.77 2.53 8.77 1.69 0 4.51-2.19 6.07-4.72.55-.89.13-1.82-.71-.89-1.06 1.14-2.49 2.36-4 2.07-1-.17-1.94-1.9-.46-6.2 3.54-.17 7.71-2.19 8.77-5.53.92-2.88-.98-3.96-2.5-4zm.38 3.12c-.89 2.61-4 4.8-6.24 5.35 2.15-5.69 4.21-7.21 5.52-7.17.72 0 1.06.82.72 1.82zM109.4 15.62h3.42c.76 0 1.14-.21 1.3-.76.3-.72.13-1.06-.63-1.06h-3.42l1.65-4.38c.21-.59 0-.89-.34-.89h-1.77c-.46 0-.63.13-.84.72L107 13.83h-2.7c-.38 0-.68-.08-.93 1.06-.09.55 0 .76.55.76h2.4l-4.09 10.67a45.64 45.64 0 0 0-1.69 4.68c-.25 1.48.64 2.07 1.73 1.86 2.15-.38 5.23-2.62 8-6.12.76-1 .13-1.64-.63-.84a34.4 34.4 0 0 1-3.67 3.16c-1.1.72-1.64.21-1.26-.84zM147.44 14.62c.25-.59-.59-.76-2.53-1.13-.59-.13-.93.5-1.94 2.61a4 4 0 0 0-3.5-1.43c-3.08.08-6.88 2.86-10 7.12-2.49 3.42-3.25 5.78-2.78 8.31a3.11 3.11 0 0 0 3.08 2.52c2.32.08 4.64-2.11 7-4.52l1.48-1.48c.42-.42.8-.17.54.34a23.77 23.77 0 0 0-1.89 4.17c-.3 1.48.5 1.86 1.64 1.69 2.19-.29 5.61-2.32 8.23-5.94.75-1.06 0-1.65-.68-.85a26.62 26.62 0 0 1-3.75 3.29c-1.14.76-1.65.55-1.31-.34.17-.55.8-2.07 6.41-14.36zm-9.74 11c-2.66 2.45-4.81 4.22-6.29 4.22-1 0-1.47-.43-1.56-1.14-.25-1.86 1.44-4.68 2.83-6.58 2.4-3.16 5.36-5.78 7.25-5.78 1.31 0 2 .55 2.11 1.35.25 1.46-2.19 5.93-4.34 7.87zM196.28 12.91c-2.07 0-4.85 1.47-7.47 4.38-.84 1-.21 1.65.59.93a20.28 20.28 0 0 1 2.87-2.19c.89-.55 1.48-.13 1.22.67-.21.64-.84 2.2-1.3 3.25l-2.87 6.58c-.8 1.86-1.56 3.71-1.73 4.22-.38 1.31.29 2 1.35 2 2 0 4.77-1.65 7.42-4.6.84-1 .21-1.64-.59-.93a28 28 0 0 1-3.12 2.4c-.88.54-1.52.12-1.22-.68.21-.59.84-1.94 1.26-2.91l2.91-6.58c.85-1.94 1.82-4 2-4.55.32-1.28-.31-1.99-1.32-1.99zM198.81 2.7a2.39 2.39 0 0 0-2.53 2.15 2.09 2.09 0 0 0 1.85 2.45 2.43 2.43 0 0 0 2.49-2.11 2.08 2.08 0 0 0-1.81-2.49zM210.49 13.54c-3.71-.17-7.68 4.13-9.62 10.46s.17 8.77 2.62 8.77c1.69 0 4.51-2 6.2-4.72.55-.89.13-1.82-.72-.89-1.05 1.14-2.4 2.19-3.79 2.11s-2.37-2-.76-6.62c2.36-6.66 4-7.42 4.72-7.47s2.19 1.86 3.08 2.07a1.36 1.36 0 0 0 1.64-.71c.38-.72.14-2.83-3.37-3zM186.54 13.83h-3.42l1.64-4.38c.22-.59 0-.89-.33-.89h-1.78c-.46 0-.63.13-.84.72l-1.73 4.55h-2.74c-.38 0-.67-.08-.93 1.06-.08.55.05.76.55.76h2.41l-4.09 10.67a43.34 43.34 0 0 0-1.69 4.68c-.26 1.48.63 2.07 1.73 1.86 2.15-.38 5.23-2.62 8-6.12.76-1 .13-1.64-.64-.84a34.33 34.33 0 0 1-3.68 3.16c-1.1.72-1.65.21-1.27-.84l4.71-12.6h3.42c.76 0 1.14-.21 1.31-.76.29-.69.12-1.03-.63-1.03zM122.94 25.73a40.24 40.24 0 0 1-3.8 3.33c-1.1.72-1.64.21-1.26-.84L128.17.97c.17-.42.08-1-.51-1a58.6 58.6 0 0 0-6 .68c-.34.08-.51.59-.13.71l2.28.85c.46.17.51.38.21 1.14l-8.84 22.97a43.34 43.34 0 0 0-1.69 4.68c-.25 1.48.63 2.07 1.73 1.86 2.28-.38 5.52-2.62 8.35-6.29.76-1.01.13-1.64-.63-.84zM166.33 25.81l2.49-5c1.35-2.74 1.61-4 1.61-4.93 0-1.81-.93-2.74-2.83-2.74-2.66 0-4.77 2.11-8 6.66-.89 1.22-1.48 2.15-2.66 3.67-.38.47-.67.42-.46-.13l1.64-4.09a17 17 0 0 0 1.35-4.47c0-1.09-.46-1.6-1.64-1.6-1.44 0-3.25.76-6.41 4.77-1.14 1.47 0 1.64.38 1.18.63-.64 2-2.07 2.91-2.87s1.72-.55 1.39.42a18.36 18.36 0 0 1-.8 2.24l-5 12.27c-.68 1.69 2.53 2.07 3.08.8 1.73-4 5.52-9 7.08-11.22 2.28-3.25 4.26-5.48 5.69-5.48.76 0 1.1.42 1.1 1.22a5.83 5.83 0 0 1-.59 2l-3.54 7.55c-1 2-1.94 4.13-2.11 4.68-.42 1.31.3 2 1.43 2 2 0 4.77-1.65 7.43-4.6.84-1 .21-1.64-.59-.93a29 29 0 0 1-3.12 2.41c-.92.59-1.56.12-1.26-.72.21-.6.97-2.16 1.43-3.09z"/></symbol><symbol id="icon-checkmark-circle" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 24C5.373 24 0 18.627 0 12S5.373 0 12 0s12 5.373 12 12-5.373 12-12 12zm5.783-16.343L16.73 6.283A.674.674 0 0 0 16.204 6a.674.674 0 0 0-.527.283L10.6 12.919 8.323 9.94a.674.674 0 0 0-.527-.282.674.674 0 0 0-.526.282l-1.053 1.374A1.15 1.15 0 0 0 6 12c0 .253.077.505.217.687l2.802 3.656 1.053 1.374c.14.182.333.283.527.283a.674.674 0 0 0 .526-.283l1.053-1.374 5.605-7.313A1.15 1.15 0 0 0 18 8.343a1.15 1.15 0 0 0-.217-.686z"/></symbol><symbol id="icon-copy-link" viewBox="0 0 16 15.98"><path class="cls-1" d="M8.82 13.17L6 16a.81.81 0 0 1-1.14 0L4 15.09A.81.81 0 0 1 4 14l4.69-4.72a.8.8 0 0 1 1.13 0A.89.89 0 0 0 11.08 8a2.65 2.65 0 0 0-3.65 0l-4.68 4.7a2.6 2.6 0 0 0 0 3.65l.88.87a2.56 2.56 0 0 0 3.64 0l2.8-2.8a.88.88 0 0 0-1.25-1.25z" transform="translate(-2 -2)"/><path class="cls-1" d="M17.25 3.6l-.88-.87a2.64 2.64 0 0 0-3.64 0L10 5.42a.91.91 0 0 0 0 1.26.89.89 0 0 0 1.26 0L14 4a.8.8 0 0 1 1.14 0l.87.87A.81.81 0 0 1 16 6l-4.68 4.68a.8.8 0 0 1-1.13 0 .91.91 0 0 0-1.26 0 .89.89 0 0 0 0 1.26 2.6 2.6 0 0 0 3.65 0l4.68-4.68a2.6 2.6 0 0 0 0-3.65z" transform="translate(-2 -2)"/></symbol><symbol id="icon-lacroix-search" viewBox="0 0 16 16"><path d="M15.85 15.15l-5.27-5.28a6 6 0 1 0-.71.71l5.28 5.27a.48.48 0 0 0 .7 0 .48.48 0 0 0 0-.7zM1 6a5 5 0 1 1 5 5 5 5 0 0 1-5-5z"/></symbol><symbol id="icon-logo-a" viewBox="0 0 15 17"><path d="M11.435 3.13v5.913H7.609l3.826-5.913zM12.826 0L2.391 15.652H1V16h3.826v-.348H3.087l4.174-6.26h4.174v6.26h-1.74V16h4.522v-.348h-1.39V0z" fill-rule="evenodd"/></symbol><symbol id="icon-logo-atl" viewBox="0 0 82 25"><g><path d="M25.509.349h-.669L9.297 23.188H7.976l-.21.845h4.406l.212-.845H10.36l5.62-8.258h5.152l-.934 8.258h-1.803l-.212.845h6.185l.208-.845h-1.642L25.509.349zm-3.35 5.503l-.928 8.205h-4.656l5.584-8.205zM70.052 8.578c.812 0 1.423-.662 1.423-1.54 0-.811-.562-1.422-1.308-1.422-.825 0-1.424.659-1.424 1.567 0 .795.563 1.395 1.309 1.395zM29.809 20.791c-.421.962-1.131 2.084-1.747 2.084-.174 0-.352-.052-.352-.438 0-.2.053-.521.137-.823l2.641-10.29h2.205l.212-.842h-2.202l1.145-4.409H29.27l-1.145 4.409h-1.689l-.212.842h1.687l-2.408 9.445-.048.18c-.135.501-.275 1.02-.275 1.688 0 .764.485 1.653 1.853 1.653 1.438 0 2.605-1.028 3.467-3.058l.165-.359-.759-.305-.097.223zM35.675 20.797c-.279.678-1.073 2.078-1.744 2.078-.207 0-.323-.021-.323-.438 0-.287.031-.525.106-.823L39.118.807h-4.497l-.21.843h1.858l-4.9 19.124-.047.188c-.136.534-.276 1.086-.276 1.68 0 .799.487 1.651 1.853 1.651 2.263 0 3.335-2.664 3.527-3.198l.081-.227-.739-.299-.093.228zM77.5 13.191c0 .671.513 1.193 1.167 1.193.777 0 1.279-.625 1.279-1.593 0-1.199-.792-2.599-3.025-2.599-2.252 0-3.8 1.357-4.731 4.147-.444 1.311-1.272 3.747-1.272 6.406 0 1.712.908 3.542 3.456 3.542 1.238 0 2.98-.668 4.25-3.854l.14-.33-.829-.381-.1.238c-.32.762-1.293 3.081-2.889 3.081-.974 0-1.468-.744-1.468-2.211 0-2.229.673-4.556 1.332-6.534.797-2.386 1.245-3.233 2.168-3.233.56 0 .951.226.951.549 0 .284-.097.497-.2.723-.107.242-.229.51-.229.856zM70.573 10.48H64.79l1.117-4.409h-2.576l-1.117 4.409h-1.889l-.209.842h1.886l-2.41 9.447-.045.172c-.136.513-.277 1.041-.277 1.638 0 .789.5 1.71 1.91 1.71 2.166 0 3.246-2.664 3.441-3.197l.083-.228-.736-.296-.098.222c-.57 1.305-1.223 2.084-1.746 2.084-.189 0-.323-.031-.323-.438 0-.229.041-.475.136-.822l2.615-10.289 3.258.001-2.437 9.442c-.137.492-.324 1.168-.324 1.756 0 .814.507 1.768 1.938 1.768 2.157 0 3.245-2.663 3.441-3.197l.083-.228-.741-.274-.1.215c-.84 1.803-1.432 2.069-1.71 2.069-.281 0-.352-.055-.352-.466 0-.254.049-.483.135-.797l2.83-11.134zM58.158 20.88c-.27.546-.988 1.995-1.674 1.995-.297 0-.378-.088-.378-.408 0-.238.045-.523.134-.854l1.832-7.101.047-.18c.156-.593.304-1.151.304-1.886 0-1.094-.759-2.197-2.454-2.197-1.026 0-1.937.428-2.718 1.275l.261-1.045H49.09l-.279.842h1.884L47.431 24.03h2.577l2.281-8.802c.495-1.871 1.633-3.765 2.851-3.765.692 0 .837.44.837.809 0 .363-.102.762-.22 1.224l-1.872 7.306c-.117.477-.314 1.271-.314 1.83 0 .799.502 1.653 1.911 1.653.958 0 2.33-.538 3.428-3.103l.143-.315-.743-.3-.152.313zM47.765 20.866l-.743-.298-.097.223c-.789 1.812-1.432 2.083-1.745 2.083-.164 0-.217-.058-.235-.074-.069-.073-.101-.229-.088-.448 0-.158.045-.404.135-.737l2.857-11.133h-2.58l-.202.828c-.418-.74-1.128-1.114-2.12-1.114-2.718 0-3.95 2.378-4.641 4.167-.39 1.022-1.415 4.151-1.477 6.32-.047 1.209.25 2.183.857 2.812.5.521 1.201.796 2.026.796 1.22 0 2.087-.83 2.617-1.567.03.389.186.743.449 1.018.348.361.851.552 1.456.552 1.436 0 2.65-1.116 3.439-3.19l.092-.238zm-7.564 2.238c-.312 0-.538-.076-.69-.229-.208-.213-.305-.606-.291-1.171.072-2.161 1.23-6.062 1.904-8.028.385-1.136 1.073-2.491 2.167-2.491h.001c.299 0 .546.099.735.293.261.269.402.715.388 1.222-.053 1.295-.642 3.936-1.535 6.888-.692 2.2-1.693 3.516-2.679 3.516zM6.992 3.046l-.052.294h.721L8.322.75H2.71l-.658 2.59h.719l.062-.158c.582-1.478.76-1.665 1.593-1.665h.132L2.519 9.494h-.832l-.215.767h3.33l.225-.767H4.1l2.041-7.977h.186c.383 0 .622.02.707.121.153.184.058.849-.042 1.408zM9.119 6.277c.257-.957.775-1.679 1.204-1.679.163 0 .245.069.245.206 0 .204-.076.497-.144.736L9.67 8.45c-.039.116-.166.639-.166.954 0 .599.373.972.973.972.729 0 1.31-.506 1.745-1.547.089.996.686 1.546 1.713 1.546 1.378 0 2.041-1.46 2.211-1.908l.081-.211-.666-.336-.105.244c-.202.468-.642 1.253-1.329 1.253-.126 0-.511 0-.511-.699 0-.351.058-.703.113-.973 1.376-.358 3.193-1.427 3.193-2.829 0-.799-.519-1.276-1.389-1.276-1.643 0-3.315 2.465-3.329 4.896l-.528-.217-.097.225c-.248.576-.508.838-.613.876 0-.001-.01-.023-.01-.093 0-.156.069-.507.106-.656l.765-2.872c.076-.309.154-.627.154-.995 0-.578-.395-1.162-1.276-1.162a1.72 1.72 0 0 0-1.002.337l.829-3.228H8.424l-.217.768h.655l-2.243 8.742h1.466l1.034-3.984zm4.83.567c.392-1.402 1.132-2.437 1.585-2.437.184 0 .203.019.203.207.001.742-.715 1.759-1.788 2.23z"/></g></symbol><symbol id="icon-nav-close" viewBox="0 0 21.49 21.49"><path d="M-.007.742l.742-.743 20.747 20.747-.743.742z"/><path d="M-.007 20.738L20.739-.008l.743.742L.735 21.481z"/></symbol><symbol id="icon-nav-latest" viewBox="0 0 32 32"><path d="M16.889 5.653a.889.889 0 0 0-1.778.003v.003l.03 11.637a.89.89 0 0 0 1.522.622l5.141-5.216a.889.889 0 1 0-1.265-1.248l-3.627 3.675-.023-9.474z"/><path d="M16 31.111c8.346 0 15.111-6.765 15.111-15.111S24.346.889 16 .889.889 7.654.889 16 7.654 31.111 16 31.111zm0-1.778c-7.364 0-13.333-5.97-13.333-13.333S8.637 2.667 16 2.667c7.364 0 13.333 5.97 13.333 13.333S23.363 29.333 16 29.333z"/></symbol><symbol id="icon-nav-magazine" viewBox="0 0 36 32"><path d="M0 1.264C0 .482.638-.08 1.422.01l15.68 1.794c.792.109 1.399.77 1.422 1.578v27.117a1.242 1.242 0 0 1-1.427 1.228l.007.001-15.68-1.794A1.642 1.642 0 0 1 0 28.356V1.264zm2 .824v25.9l14.524 1.66V3.752L2 2.09z"/><path d="M36 1.264v-.025A1.242 1.242 0 0 0 34.571.011l.007-.001-15.68 1.794a1.642 1.642 0 0 0-1.422 1.578v27.092c0 .782.636 1.344 1.42 1.254l15.68-1.794A1.642 1.642 0 0 0 36 28.356V1.264zm-2 26.724l-14.524 1.66V3.752L34 2.09v25.898z"/></symbol><symbol id="icon-nav-more" viewBox="0 0 22 22"><path d="M10 10V1a1 1 0 0 1 2 0v9h9a1 1 0 0 1 0 2h-9v9a1 1 0 0 1-2 0v-9H1a1 1 0 0 1 0-2h9z" fill-rule="evenodd"/></symbol><symbol id="icon-nav-popular" viewBox="0 0 38 32"><path d="M16.066 15.534l3.64 6.756a1.001 1.001 0 0 0 1.658.156l.001-.002 14.084-17.44a1 1 0 0 0-1.555-1.262l-.001.002-13.14 16.274-3.578-6.64a1.002 1.002 0 0 0-1.599-.221L.394 28.933a1 1 0 0 0 1.44 1.388l14.232-14.786z"/><path d="M35.056 12.912a1 1 0 0 0 2 0V2.68a1 1 0 0 0-1-1H25.96a1 1 0 0 0 0 2h9.096v9.232z"/></symbol><symbol id="icon-nav-sections" viewBox="0 0 32 32"><path d="M2 21.666h28a1 1 0 0 0 0-2H2a1 1 0 0 0 0 2zm0-9.332h28a1 1 0 0 0 0-2H2a1 1 0 0 0 0 2zM2 3h28a1 1 0 0 0 0-2H2a1 1 0 0 0 0 2z"/><path d="M2 3h28a1 1 0 0 0 0-2H2a1 1 0 0 0 0 2zm0 28h28a1 1 0 0 0 0-2H2a1 1 0 0 0 0 2z"/></symbol><symbol id="icon-nav-writers" viewBox="0 0 24 23"><path d="M2.013 21.042l3.288.041h16.663c-.279-2.07-1.549-6.83-7.332-7.951a.956.956 0 0 1-.272-1.785c1.611-.865 2.613-2.564 2.613-4.435 0-2.755-2.174-4.995-4.845-4.995s-4.844 2.24-4.844 4.995c0 1.836.974 3.52 2.54 4.395a.957.957 0 0 1-.3 1.781c-5.827 1.03-7.192 5.857-7.51 7.954M23 23H5.289l-4.342-.055A.963.963 0 0 1 0 21.97c.002-.085.245-7.823 7.252-10.268a6.995 6.995 0 0 1-1.885-4.79C5.367 3.102 8.401 0 12.128 0c3.728 0 6.762 3.1 6.762 6.912 0 1.859-.721 3.596-1.961 4.87 6.942 2.543 7.03 10.176 7.03 10.26 0 .53-.43.958-.96.958" fill-rule="evenodd"/></symbol><symbol id="icon-onboarding-app" viewBox="0 0 56 56"><g fill-rule="evenodd"><path fill-rule="nonzero" d="M13.69 0h28.62C45.154 0 46 .784 46 3.417v49.166C46 55.216 45.154 56 42.31 56H13.69c-2.844 0-3.69-.784-3.69-3.417V3.417C10 .784 10.846 0 13.69 0zM13 3v50h30V3H13z"/><circle cx="28.294" cy="48.294" r="3.294"/><path fill-rule="nonzero" d="M17.43 14.786c-.79 0-1.43-.624-1.43-1.393 0-.77.64-1.393 1.43-1.393h22.14c.79 0 1.43.624 1.43 1.393 0 .77-.64 1.393-1.43 1.393H17.43zm0 12.666c-.79 0-1.43-.623-1.43-1.392 0-.77.64-1.393 1.43-1.393h22.14c.79 0 1.43.623 1.43 1.393 0 .769-.64 1.392-1.43 1.392H17.43zm0-6.333c-.79 0-1.43-.624-1.43-1.393 0-.77.64-1.393 1.43-1.393h22.14c.79 0 1.43.624 1.43 1.393 0 .77-.64 1.393-1.43 1.393H17.43zm0 12.667c-.79 0-1.43-.624-1.43-1.393 0-.77.64-1.393 1.43-1.393h22.14c.79 0 1.43.624 1.43 1.393 0 .77-.64 1.393-1.43 1.393H17.43z"/></g></symbol><symbol id="icon-onboarding-crossword" viewBox="0 0 25 24"><path d="M1.489 1.286V12h10.714V1.286H1.489zM12.203 12v10.714h10.714V12H12.203zM1.739 0h20.928c.848 0 1.536.685 1.536 1.53v20.94c0 .845-.688 1.53-1.536 1.53H1.74a1.533 1.533 0 0 1-1.536-1.53V1.53C.203.685.891 0 1.739 0z"/></symbol><symbol id="icon-onboarding-facebook" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M21 0a3 3 0 0 1 3 3v18a3 3 0 0 1-3 3H3a3 3 0 0 1-3-3V3a3 3 0 0 1 3-3h18zm.532 1.286H2.468c-.653 0-1.182.53-1.182 1.182v19.064c0 .653.53 1.182 1.182 1.182h10.263v-8.298H9.94v-3.234h2.792V8.797c0-2.768 1.69-4.275 4.16-4.275 1.183 0 2.2.088 2.495.128v2.892h-1.712c-1.343 0-1.603.639-1.603 1.575v2.065h3.203l-.418 3.234h-2.785v8.298h5.46c.654 0 1.183-.53 1.183-1.182V2.468c0-.653-.53-1.182-1.182-1.182z"/></symbol><symbol id="icon-onboarding-newsletter" viewBox="0 0 56 56"><g fill-rule="nonzero"><path d="M22.43 20.786c-.79 0-1.43-.624-1.43-1.393 0-.77.64-1.393 1.43-1.393h22.14c.79 0 1.43.624 1.43 1.393 0 .77-.64 1.393-1.43 1.393H22.43zm0 10.977c-.79 0-1.43-.623-1.43-1.392 0-.77.64-1.393 1.43-1.393h22.14c.79 0 1.43.623 1.43 1.393 0 .769-.64 1.392-1.43 1.392H22.43zm0-5.488c-.79 0-1.43-.624-1.43-1.393 0-.77.64-1.393 1.43-1.393h22.14c.79 0 1.43.623 1.43 1.393 0 .769-.64 1.393-1.43 1.393H22.43zm0 10.977c-.79 0-1.43-.623-1.43-1.392 0-.77.64-1.393 1.43-1.393h22.14c.79 0 1.43.623 1.43 1.393 0 .769-.64 1.392-1.43 1.392H22.43z"/><path d="M13.298 1H53a3 3 0 0 1 3 3v43a8 8 0 0 1-8 8H6.644c1.38 0 2.96-1.149 3.654-5.253.143-.843.143-2.604 0-5.282V4a3 3 0 0 1 3-3zM48 52a5 5 0 0 0 5-5V4H13.298v40.408c.117 3.082-.706 5.597-1.163 7.592H48z"/><path d="M3 26h10.288v22.356a6.644 6.644 0 0 1-13.288 0V29a3 3 0 0 1 3-3zm0 3v19.356a3.644 3.644 0 1 0 7.288 0V29H3z"/></g></symbol><symbol id="icon-social-email" viewBox="0 0 21 16"><path d="M21 2.254l-10.5 7.72L0 2.196A2 2 0 0 1 2 .222h17a2 2 0 0 1 2 2v.032zm0 2.369v9.155a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-9.21c6.081 4.581 9.297 7.004 9.65 7.268.477.359.591.428.855.426.258-.001.372-.07.834-.415L21 4.623z" fill-rule="evenodd"/></symbol><symbol id="icon-social-facebook" viewBox="0 0 16 16"><path d="M15.117 0H.883A.883.883 0 0 0 0 .883v14.234c0 .488.395.883.883.883h7.663V9.804H6.461V7.389h2.085V5.61c0-2.067 1.262-3.192 3.106-3.192.883 0 1.642.065 1.863.095v2.16h-1.279c-1.002 0-1.196.476-1.196 1.176v1.541h2.39l-.31 2.415h-2.08V16h4.077a.883.883 0 0 0 .883-.883V.883A.883.883 0 0 0 15.117 0" fill-rule="evenodd"/></symbol><symbol id="icon-social-flipboard" viewBox="0 0 500 500"><path d="M0 0v500h500V0H0zm400 200H300v100H200v100H100V100h300v100z"/></symbol><symbol id="icon-social-google" viewBox="0 0 16 16"><path d="M8.163 6.857V9.6h4.63c-.187 1.177-1.4 3.451-4.63 3.451-2.787 0-5.061-2.262-5.061-5.051s2.274-5.051 5.061-5.051c1.586 0 2.647.662 3.254 1.234l2.216-2.092C12.21.79 10.367 0 8.163 0 3.65 0 0 3.577 0 8s3.65 8 8.163 8C12.875 16 16 12.754 16 8.183c0-.526-.058-.926-.128-1.326H8.163z" fill-rule="evenodd"/></symbol><symbol id="icon-social-instagram" viewBox="0 0 16 16"><path d="M8 0C5.827 0 5.555.01 4.702.048 3.85.087 3.269.222 2.76.42a3.921 3.921 0 0 0-1.417.923c-.445.444-.719.89-.923 1.417-.198.509-.333 1.09-.372 1.942C.01 5.555 0 5.827 0 8s.01 2.445.048 3.298c.039.852.174 1.433.372 1.942.204.526.478.973.923 1.417.444.445.89.719 1.417.923.509.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.445-.01 3.298-.048c.852-.039 1.433-.174 1.942-.372a3.921 3.921 0 0 0 1.417-.923c.445-.444.719-.89.923-1.417.198-.509.333-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.298c-.039-.852-.174-1.433-.372-1.942a3.921 3.921 0 0 0-.923-1.417A3.921 3.921 0 0 0 13.24.42c-.509-.198-1.09-.333-1.942-.372C10.445.01 10.173 0 8 0zm0 1.442c2.136 0 2.39.008 3.233.046.78.036 1.203.166 1.485.276.374.145.64.318.92.598.28.28.453.546.598.92.11.282.24.705.276 1.485.038.844.046 1.097.046 3.233s-.008 2.39-.046 3.233c-.036.78-.166 1.203-.276 1.485-.145.374-.318.64-.598.92-.28.28-.546.453-.92.598-.282.11-.705.24-1.485.276-.844.038-1.097.047-3.233.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.478 2.478 0 0 1-.598-.92c-.11-.282-.24-.705-.276-1.485-.038-.844-.047-1.097-.047-3.233s.009-2.39.047-3.233c.036-.78.166-1.203.276-1.485.145-.374.318-.64.598-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.844-.038 1.097-.046 3.233-.046zM7.9 3.8a4.1 4.1 0 1 0 0 8.2 4.1 4.1 0 0 0 0-8.2zm0 6.761a2.661 2.661 0 1 1 0-5.322 2.661 2.661 0 0 1 0 5.322zM13.4 3.8a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" fill-rule="evenodd"/></symbol><symbol id="icon-social-linkedin" viewBox="0 0 16 16"><path d="M3.502 15.925H.343V5.085h3.09v10.84h.07zM1.854 3.738C.687 3.738 0 2.916 0 1.87 0 .822.755 0 1.923 0 3.09 0 3.777.822 3.777 1.87c0 .971-.756 1.868-1.923 1.868zM16 15.925h-3.57v-5.607c0-1.496-.55-2.468-1.786-2.468-.962 0-1.442.673-1.717 1.346-.069.225-.069.598-.069.897V16H5.356s.069-9.944 0-10.916h3.502v1.72c.206-.748 1.305-1.795 3.09-1.795 2.198 0 3.983 1.57 3.983 4.935v5.981H16z" fill-rule="evenodd"/></symbol><symbol id="icon-social-pinterest" viewBox="0 0 16 16"><path d="M16 8c0-4.417-3.583-8-8-8a8.002 8.002 0 0 0-3.208 15.333c-.021-.562-.01-1.24.135-1.843 0 0 .156-.646 1.031-4.355-.26-.51-.26-1.27-.26-1.27 0-1.188.687-2.073 1.542-2.073.729 0 1.083.552 1.083 1.208 0 .73-.469 1.823-.708 2.833-.198.855.427 1.542 1.26 1.542 1.52 0 2.542-1.948 2.542-4.25 0-1.76-1.188-3.073-3.334-3.073-2.427 0-3.937 1.813-3.937 3.833 0 .698.208 1.188.531 1.573.146.177.167.24.115.448-.042.146-.125.5-.167.636-.052.208-.219.28-.396.208-1.114-.458-1.635-1.687-1.635-3.062 0-2.271 1.916-5 5.708-5 3.063 0 5.073 2.218 5.073 4.583 0 3.146-1.75 5.49-4.323 5.49-.865 0-1.677-.47-1.948-1a345.426 345.426 0 0 1-.562 2.197c-.167.615-.51 1.23-.813 1.709C6.46 15.885 7.21 16 8 16c4.417 0 8-3.583 8-8z" fill-rule="evenodd"/></symbol><symbol id="icon-social-rss" viewBox="0 0 16 16"><path d="M2.74 16a2.74 2.74 0 1 0 0-5.48 2.74 2.74 0 0 0 0 5.48zm11.89 0a1.37 1.37 0 0 1-1.37-1.37c0-7.335-4.556-11.89-11.89-11.89a1.37 1.37 0 0 1 0-2.74c4.331 0 8 1.384 10.625 4.005C14.62 6.625 16 10.3 16 14.63A1.37 1.37 0 0 1 14.63 16zm-5.185 0a1.37 1.37 0 0 1-1.37-1.37c0-4.449-2.256-6.705-6.705-6.705a1.37 1.37 0 0 1 0-2.74c6.001 0 9.445 3.442 9.445 9.444A1.37 1.37 0 0 1 9.445 16z" fill-rule="evenodd"/></symbol><symbol id="icon-social-twitter" viewBox="0 0 16 14"><path d="M14.115 2.13A3.393 3.393 0 0 0 15.558.25a6.437 6.437 0 0 1-2.085.825A3.226 3.226 0 0 0 11.077 0C9.265 0 7.795 1.523 7.795 3.401c0 .267.029.527.085.776C5.152 4.035 2.733 2.68 1.114.623a3.48 3.48 0 0 0-.445 1.71c0 1.18.58 2.22 1.46 2.83a3.183 3.183 0 0 1-1.486-.425v.043c0 1.648 1.131 3.023 2.633 3.335a3.18 3.18 0 0 1-1.483.059c.418 1.351 1.63 2.334 3.067 2.362A6.442 6.442 0 0 1 0 11.946a9.057 9.057 0 0 0 5.032 1.528c6.038 0 9.34-5.183 9.34-9.678 0-.148-.004-.294-.01-.44A6.811 6.811 0 0 0 16 1.595a6.385 6.385 0 0 1-1.885.536z" fill-rule="evenodd"/></symbol><symbol id="icon-social-youtube" viewBox="0 0 16 12"><path d="M11.428 6a.589.589 0 0 1-.267.506l-4.572 3a.508.508 0 0 1-.303.094.585.585 0 0 1-.277-.075A.613.613 0 0 1 5.714 9V3c0-.216.116-.422.295-.525a.542.542 0 0 1 .58.019l4.572 3c.17.103.268.3.268.506zM16 6c0-1.34 0-2.766-.277-4.069-.196-.919-.893-1.594-1.732-1.697C12.01 0 10 0 8 0 6 0 3.991 0 2.009.234 1.169.338.482 1.013.286 1.931 0 3.234 0 4.66 0 6c0 1.34 0 2.766.277 4.069.196.919.893 1.594 1.732 1.697C3.99 12 6 12 8 12c2 0 4.009 0 5.991-.234.84-.104 1.536-.779 1.723-1.697C16 8.766 16 7.34 16 6z" fill-rule="evenodd"/></symbol><symbol id="icon-ui-checkmark-selected" viewBox="0 0 12 10"><path fill-rule="evenodd" d="M10.845.148a.483.483 0 0 0-.696 0L3.984 6.5a.483.483 0 0 1-.696 0L1.77 4.936a.483.483 0 0 0-.695 0l-.932.96a.52.52 0 0 0 0 .716l3.145 3.24a.483.483 0 0 0 .696 0l7.792-8.029a.519.519 0 0 0 0-.716l-.931-.96z"/></symbol><symbol id="icon-ui-chevron-compress" viewBox="0 0 10 7"><path d="M4.668 4.986a.467.467 0 0 1 .67 0L1.625 1.223a.943.943 0 0 0-1.346 0 .974.974 0 0 0 0 1.364L3.992 6.35a1.419 1.419 0 0 0 2.022 0l3.707-3.757a.974.974 0 0 0 0-1.365.943.943 0 0 0-1.346 0L4.668 4.986z"/></symbol><symbol id="icon-ui-chevron-expand" viewBox="0 0 10 7"><path d="M5.332 2.728a.467.467 0 0 1-.67 0l3.713 3.763a.943.943 0 0 0 1.346 0 .974.974 0 0 0 0-1.364L6.008 1.364a1.419 1.419 0 0 0-2.022 0L.279 5.12a.974.974 0 0 0 0 1.365.943.943 0 0 0 1.346 0l3.707-3.758z"/></symbol><symbol id="icon-ui-ellipses" viewBox="0 0 16 4"><g fill-rule="evenodd"><circle cx="2" cy="2" r="2"/><circle cx="8" cy="2" r="2"/><circle cx="14" cy="2" r="2"/></g></symbol><symbol id="icon-ui-lock" viewBox="0 0 12 14"><path d="M10 5h1.5a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-8A.5.5 0 0 1 .5 5H2V4a4 4 0 0 1 4-4 4 4 0 0 1 4 4zM8 5V4a2 2 0 0 0-2-2 2 2 0 0 0-2 2v1z"/></symbol><symbol id="icon-ui-search" viewBox="0 0 32 32"><path d="M12.692 25.384c7.01 0 12.692-5.682 12.692-12.692S19.702 0 12.692 0 0 5.682 0 12.692s5.682 12.692 12.692 12.692zm0-2C6.787 23.384 2 18.597 2 12.692S6.787 2 12.692 2s10.692 4.787 10.692 10.692-4.787 10.692-10.692 10.692z"/><path d="M21.216 22.63l8.076 8.078a1 1 0 1 0 1.416-1.416l-8.078-8.076a1 1 0 1 0-1.414 1.414z"/><path d="M20.508 21.924l8.34 8.336 1.412-1.414-8.336-8.338z"/></symbol><symbol id="icon-ui-x" viewBox="0 0 16 16"><path d="M9.525 8l6.159 6.159a1.078 1.078 0 1 1-1.525 1.525L8 9.524l-6.159 6.16a1.076 1.076 0 0 1-1.525 0 1.078 1.078 0 0 1 0-1.525L6.476 8 .315 1.841A1.078 1.078 0 1 1 1.841.316L8 6.476l6.16-6.16a1.078 1.078 0 1 1 1.524 1.525L9.524 8z" fill-rule="evenodd"/></symbol></svg></div>
+
+
+
+<div id="site" class="">
+    
+
+        
+        
+            <nav id="main-navigation--lacroix" class="c-nav c-nav--main--lacroix u-border-box u-smooth-font js-navigation legacy c-nav--slim" role="navigation" aria-label="Main menu"> 
+<div class="c-nav__before c-nav__before--slim"></div>
+<div class="c-nav__container">
+    <a href="#main-content" class="c-skip-link">Skip to content</a>
+    <ul id="nav-list" class="c-nav__list c-nav__list--menu c-nav__list--menu--slim">
+      <li id="small-a" class="c-nav__item--lacroix c-nav__item--main--lacroix c-nav__item--small-a c-nav__item--small-a--displayed">
+        <a href="/" class="c-nav__link--lacroix" aria-label="the atlantic logo" data-name="nav:atlantic-logo">
+          <svg class="c-nav__icon--lacroix c-nav__small-a-icon--lacroix"><use xlink:href="#icon-atlantic-big-a"></use></svg>
+        </a>
+      </li>
+      <li class="c-nav__item--lacroix c-nav__item--main--lacroix c-nav__menu--lacroix">
+        <button id="hamburger-menu" class="c-nav__link--lacroix c-nav__button" aria-expanded="false" aria-label="Main Menu" data-name="nav:hamburger-menu">
+          <div id="hamburger-icon" class="hamburger hamburger--spin js-hamburger">
+            <div class="hamburger-box">
+              <div class="hamburger-inner"></div>
+            </div>
+          </div>
+        </button>
+        <div class="c-expanded-nav c-expanded-nav__slim u-hidden" id="expanded-nav">  
+  
+  <div class="c-expanded-nav__container">
+    <div class="c-expanded-nav-mobile-header">
+  <div class="c-expanded-nav-mobile-header__container c-expanded-nav-mobile-header__container--links">
+    <div class="c-expanded-nav-mobile-header__links">
+      <a href="https://accounts.theatlantic.com/login/" class="c-expanded-nav-mobile-header__link signed-out-utils" style="display:none" data-name="nav:expanded-sign-in">
+        Sign in
+      </a>
+      <a href="https://accounts.theatlantic.com/accounts/details/" style="display:none" class="c-expanded-nav-mobile-header__link signed-in-utils" data-name="nav:expanded-my-account">
+        My Account
+      </a>
+      <a href="https://accounts.theatlantic.com/products/" class="c-expanded-nav-mobile-header__link c-expanded-nav-mobile-header__link--subscribe js-subscribe-button" data-name="nav:expanded-subscribe">
+          <span class="c-nav__title">Subscribe</span> 
+      </a>
+    </div>
+  </div>
+  <div class="c-expanded-nav-mobile-header__container">
+    <div class="c-expanded-nav-mobile-header__icon-container">
+      
+      <div class="c-search__container--mobile">
+  <a href="javascript:void(0)" class="c-nav__link c-nav__link--main has-children js-nav-link js-expandable-menu" aria-label="search" data-name="nav:expanded-icon-search">
+    <svg class="c-search__icon"><use xlink:href="#icon-ui-search"></use></svg>
+  </a>
+  <div class="c-nav__menu c-menu c-menu--expandable">
+    <section class="c-menu__section" id="main-navigation-search-menu-mobile">
+      <form action="/search/" class="c-search__form c-search__form--mobile" data-name="nav:expanded-search-form">
+        <input type="submit" class="c-search__submit c-search__submit--mobile" value="Submit">
+        <svg class="c-search__icon c-search__icon--inline c-search__icon--inline--mobile o-icon"><use xlink:href="#icon-ui-search"></use></svg>
+        <input aria-label="Search The Atlantic" type="search" name="q" class="c-search c-search--mobile js-search--mobile" placeholder="Search The Atlantic..." data-name="nav:expanded-search-close">
+        <svg class="c-menu__close o-icon"><use xlink:href="#icon-ui-x"></use></svg>
+      </form>
+      
+<strong class="c-menu__title--secondary">
+  Quick Links
+</strong>
+
+
+<ul class="c-menu__list">
+  
+  <li class="c-menu__item c-menu__item--quick-link">
+    <a href="/category/dear-therapist/" class="c-menu__link" tabindex="-1" data-name="nav:quick-link-Dear Therapist">
+      Dear Therapist
+    </a>
+  </li>
+  
+  <li class="c-menu__item c-menu__item--quick-link">
+    <a href="/free-daily-crossword-puzzle/" class="c-menu__link" tabindex="-1" data-name="nav:quick-link-Crossword Puzzle">
+      Crossword Puzzle
+    </a>
+  </li>
+  
+  <li class="c-menu__item c-menu__item--quick-link">
+    <a href="https://accounts.theatlantic.com/" class="c-menu__link" tabindex="-1" data-name="nav:quick-link-Manage Subscription">
+      Manage Subscription
+    </a>
+  </li>
+  
+</ul>
+    </section>
+  </div>
+</div>
+    </div>
+    <div class="c-expanded-nav-mobile-header__icon-container c-expanded-nav-mobile-header__icon-container--popular">
+      <a href="https://www.theatlantic.com/most-popular/" class="c-expanded-nav-mobile-header__section" data-name="nav:expanded-popular">Popular</a>
+    </div>
+    <div class="c-expanded-nav-mobile-header__icon-container">
+      <a href="https://www.theatlantic.com/latest/" class="c-expanded-nav-mobile-header__section" data-name="nav:expanded-latest">Latest</a>
+    </div>
+  </div>
+</div>
+    <div class="c-expanded-nav-sections c-expanded-nav__section">
+  <h2 class="c-expanded-nav__title c-expanded-nav-sections__title">Sections</h2>
+  <ul class="c-expanded-nav-sections__list">
+    
+    <li itemprop="name" class="c-expanded-nav-sections__item">
+      <a itemprop="url" href="https://www.theatlantic.com/politics/" class="c-menu__link" id="main-navigation-sections-menu-0-item-0" data-name="nav:expanded-Politics">Politics</a>
+    </li>
+    
+    <li itemprop="name" class="c-expanded-nav-sections__item">
+      <a itemprop="url" href="https://www.theatlantic.com/ideas/" class="c-menu__link" id="main-navigation-sections-menu-0-item-1" data-name="nav:expanded-Ideas">Ideas</a>
+    </li>
+    
+    <li itemprop="name" class="c-expanded-nav-sections__item">
+      <a itemprop="url" href="https://www.theatlantic.com/photo/" class="c-menu__link" id="main-navigation-sections-menu-0-item-2" data-name="nav:expanded-Photo">Photo</a>
+    </li>
+    
+    <li itemprop="name" class="c-expanded-nav-sections__item">
+      <a itemprop="url" href="https://www.theatlantic.com/science/" class="c-menu__link" id="main-navigation-sections-menu-0-item-3" data-name="nav:expanded-Science">Science</a>
+    </li>
+    
+    <li itemprop="name" class="c-expanded-nav-sections__item">
+      <a itemprop="url" href="https://www.theatlantic.com/culture/" class="c-menu__link" id="main-navigation-sections-menu-0-item-4" data-name="nav:expanded-Culture">Culture</a>
+    </li>
+    
+    <li itemprop="name" class="c-expanded-nav-sections__item">
+      <a itemprop="url" href="https://www.theatlantic.com/podcasts/" class="c-menu__link" id="main-navigation-sections-menu-0-item-5" data-name="nav:expanded-Podcasts">Podcasts</a>
+    </li>
+    
+    <li itemprop="name" class="c-expanded-nav-sections__item">
+      <a itemprop="url" href="https://www.theatlantic.com/health/" class="c-menu__link" id="main-navigation-sections-menu-0-item-6" data-name="nav:expanded-Health">Health</a>
+    </li>
+    
+    <li itemprop="name" class="c-expanded-nav-sections__item">
+      <a itemprop="url" href="https://www.theatlantic.com/education/" class="c-menu__link" id="main-navigation-sections-menu-0-item-7" data-name="nav:expanded-Education">Education</a>
+    </li>
+    
+    <li itemprop="name" class="c-expanded-nav-sections__item">
+      <a itemprop="url" href="https://www.theatlantic.com/projects/planet/" class="c-menu__link" id="main-navigation-sections-menu-0-item-8" data-name="nav:expanded-Planet">Planet</a>
+    </li>
+    
+    <li itemprop="name" class="c-expanded-nav-sections__item">
+      <a itemprop="url" href="https://www.theatlantic.com/technology/" class="c-menu__link" id="main-navigation-sections-menu-0-item-9" data-name="nav:expanded-Technology">Technology</a>
+    </li>
+    
+    <li itemprop="name" class="c-expanded-nav-sections__item">
+      <a itemprop="url" href="https://www.theatlantic.com/family/" class="c-menu__link" id="main-navigation-sections-menu-0-item-10" data-name="nav:expanded-Family">Family</a>
+    </li>
+    
+    <li itemprop="name" class="c-expanded-nav-sections__item">
+      <a itemprop="url" href="https://www.theatlantic.com/projects/" class="c-menu__link" id="main-navigation-sections-menu-0-item-11" data-name="nav:expanded-Projects">Projects</a>
+    </li>
+    
+    <li itemprop="name" class="c-expanded-nav-sections__item">
+      <a itemprop="url" href="https://www.theatlantic.com/business/" class="c-menu__link" id="main-navigation-sections-menu-0-item-12" data-name="nav:expanded-Business">Business</a>
+    </li>
+    
+    <li itemprop="name" class="c-expanded-nav-sections__item">
+      <a itemprop="url" href="https://www.theatlantic.com/international/" class="c-menu__link" id="main-navigation-sections-menu-0-item-13" data-name="nav:expanded-Global">Global</a>
+    </li>
+    
+    <li itemprop="name" class="c-expanded-nav-sections__item">
+      <a itemprop="url" href="https://www.theatlantic.com/events/" class="c-menu__link" id="main-navigation-sections-menu-0-item-14" data-name="nav:expanded-Events">Events</a>
+    </li>
+    
+    <li itemprop="name" class="c-expanded-nav-sections__item">
+      <a itemprop="url" href="https://www.theatlantic.com/books/" class="c-menu__link" id="main-navigation-sections-menu-0-item-15" data-name="nav:expanded-Books">Books</a>
+    </li>
+    
+    <li itemprop="name" class="c-expanded-nav-sections__item">
+      <a itemprop="url" href="https://www.theatlantic.com/category/fiction/" class="c-menu__link" id="main-navigation-sections-menu-0-item-16" data-name="nav:expanded-Fiction">Fiction</a>
+    </li>
+    
+    <li itemprop="name" class="c-expanded-nav-sections__item">
+      <a itemprop="url" href="https://www.theatlantic.com/follow-the-atlantic/" class="c-menu__link" id="main-navigation-sections-menu-0-item-17" data-name="nav:expanded-Newsletter">Newsletter</a>
+    </li>
+     
+  </ul>
+</div>
+    <div class="c-expanded-nav-crossword c-expanded-nav__section">
+  <div class="c-expanded-nav__title-container c-expanded-nav-crossword__title-container">
+    <h2 class="c-expanded-nav__title">The Atlantic Crossword</h2>
+  </div>
+  <div class="c-expanded-nav-crossword__container">
+    <img class="c-expanded-nav-crossword__img" src="https://cdn.theatlantic.com/assets/media/files/nav-crossword.png" alt="crossword promo">
+    <div class="c-expanded-nav-crossword__background"></div>
+    <a href="https://www.theatlantic.com/free-daily-crossword-puzzle/" class="c-expanded-nav-crossword__btn" data-name="nav:expanded-crossword">
+      Play Crossword
+    </a>
+  </div>
+</div>
+    <div class="c-expanded-nav-print c-expanded-nav__section">
+  <div class="c-expanded-nav__title-container">
+    <h2 class="c-expanded-nav__title">The Print Edition</h2>
+  </div>
+  <div class="c-expanded-nav-print__container">
+    <a class="c-expanded-nav-print__img-link" href="https://www.theatlantic.com/magazine/" data-name="nav:expanded-current-print-issue-img">
+      <img class="lazyload c-expanded-nav-print__img" data-srcset="https://www.theatlantic.com/magazine/images/current-issue.large.jpg" alt="the latest issue of the atlantic">
+    </a>
+    <div class="c-expanded-nav-print__bottom-container">
+      <div class="c-expanded-nav-print__issues">
+        <a class="c-expanded-nav-print__link c-expanded-nav-print__link--latest" href="https://www.theatlantic.com/magazine/" data-name="nav:expanded-latest-issue">Latest Issue</a>
+        <a class="c-expanded-nav-print__link" href="https://www.theatlantic.com/magazine/backissues/" data-name="nav:expanded-past-issues">Past Issues
+        </a>
+      </div>
+      <a class="c-expanded-nav-print__link c-expanded-nav-print__link--gift" href="https://accounts.theatlantic.com/products/gift" data-name="nav:expanded-link-give-a-gift">
+        Give a Gift
+      </a>
+    </div>
+  </div>
+</div>
+  </div>
+  
+</div>
+      </li>
+      <li class="c-nav__item--lacroix c-nav__item--main--lacroix c-nav__search--lacroix">
+        <a href="javascript:void(0)" class="c-nav__link--lacroix c-nav__search-link--lacroix js-search-button js-search-button c-search__open c-nav__search-icon-container" data-name="nav:search-icon" aria-label="search" aria-expanded="false">
+          <svg class="c-nav__icon--lacroix c-nav__search-icon--lacroix"><use xlink:href="#icon-lacroix-search"></use></svg>
+        </a>
+        <!-- changed -->
+<div class="c-search__container__container js-search-container">
+    <div class="c-search__container">
+        <form class="c-search__form" action="/search/" data-name="nav:search-form">
+        <input type="submit" class="c-search__submit" tabindex="-1" value="Submit">
+        <label class="u-element-invisible" for="search">Search The Atlantic</label>
+        <input type="search" name="q" id="search" class="c-search js-search" placeholder="Search The Atlantic..." autocomplete="off" disabled="disabled">
+        </form>
+        <a href="javascript:void(0)" class="js-close c-search__close" tabindex="-1" aria-label="close">
+        <svg class="c-search__icon" stroke-width="2"><use xlink:href="#icon-ui-x"></use></svg>
+        </a>
+        <div class="c-search__menu c-menu">
+        <section class="c-menu__section" id="main-navigation-search-menu-desktop">
+            
+<strong class="c-menu__title--secondary">
+  Quick Links
+</strong>
+
+
+<ul class="c-menu__list">
+  
+  <li class="c-menu__item c-menu__item--quick-link">
+    <a href="/category/dear-therapist/" class="c-menu__link" tabindex="-1" data-name="nav:quick-link-Dear Therapist">
+      Dear Therapist
+    </a>
+  </li>
+  
+  <li class="c-menu__item c-menu__item--quick-link">
+    <a href="/free-daily-crossword-puzzle/" class="c-menu__link" tabindex="-1" data-name="nav:quick-link-Crossword Puzzle">
+      Crossword Puzzle
+    </a>
+  </li>
+  
+  <li class="c-menu__item c-menu__item--quick-link">
+    <a href="https://accounts.theatlantic.com/" class="c-menu__link" tabindex="-1" data-name="nav:quick-link-Manage Subscription">
+      Manage Subscription
+    </a>
+  </li>
+  
+</ul>
+        </section>
+        </div>
+    </div>
+</div>
+      </li>
+      <li class="c-nav__item--lacroix c-nav__item--main--lacroix c-nav__popular--lacroix js-nav-item">
+        <a href="/most-popular/" class="c-nav__link--lacroix c-nav__search-popular--lacroix" data-name="nav:popular">
+          Popular
+        </a>
+      </li>
+      <li class="c-nav__item--lacroix c-nav__item--main--lacroix c-nav__latest--lacroix js-nav-item">
+        <a href="/latest/" class="c-nav__link--lacroix c-nav__search-latest--lacroix" data-name="nav:latest">
+          Latest
+        </a>
+      </li>
+    </ul>
+    <ul class="c-nav__list c-nav__list--logos c-nav__list--logos--slim">
+      <li id="big-a" class="c-nav__item--lacroix c-nav__item--main--lacroix c-nav__big-a">
+        <a href="/" class="c-nav__link--lacroix" aria-label="the atlantic logo" data-name="nav:big-a-atlantic-logo">
+          <svg class="c-nav__icon--lacroix c-nav__big-a-icon--lacroix"><use xlink:href="#icon-atlantic-big-a"></use></svg>
+        </a>
+      </li>
+      <li id="atl-wordmark" class="c-nav__item--lacroix c-nav__item--main--lacroix c-nav__wordmark--lacroix">
+        <a href="/" class="c-nav__link--lacroix" aria-label="the atlantic watermark" data-name="nav:watermark">
+          <svg class="c-nav__icon--lacroix c-nav__atlantic-wordmark--lacroix"><use xlink:href="#icon-atlantic-wordmark"></use></svg>
+        </a>
+      </li>
+    </ul>
+    <ul class="c-nav__list c-nav__list--accounts c-nav__list--accounts--slim">
+      <li class="c-nav__item--lacroix c-nav__item--main--lacroix c-nav__signin--lacroix">
+        <a href="https://accounts.theatlantic.com/login/" id="main-navigation-sign-in" data-name="nav:sign-in" style="display:none" class="c-nav__link--lacroix c-nav__signin-link--lacroix signed-out-utils">
+          Sign In
+        </a>
+        <a href="https://accounts.theatlantic.com/accounts/details/" id="main-navigation-my-account" data-name="nav:my-account" style="display:none" class="c-nav__link--lacroix c-nav__signin-link--lacroix signed-in-utils">
+          My Account
+        </a>
+      </li>
+      <li class="c-nav__item--lacroix c-nav__item--main--lacroix c-nav__subscribe--lacroix">
+        <a href="https://www.theatlantic.com/subscribe/navbar/" class="js-subscribe-button c-nav__link--lacroix c-nav__subscribe-link--lacroix" data-name="nav:subscribe-button">
+          <span class="c-nav__title">Subscribe</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="c-overlay js-overlay is-hidden"></div>
+
+        
+
+        
+
+        
+
+        
+
+
+
+<article id="article" data-omni-click="r'article',r' ',d,r' ',r' ',r'518697'" itemscope="itemscope" itemtype="http://schema.org/NewsArticle">
+
+    <!-- Google Microdata -->
+    <div class="article-microdata" style="display: none;">
+        <meta itemprop="mainEntityOfPage" content="https://www.theatlantic.com/technology/archive/2017/03/aristotle-computer/518697/" />
+        <meta itemprop="dateModified" content="2017-07-10T10:32:59" />
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+            <meta itemprop="name" content="The Atlantic" />
+            <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+                <meta itemprop="url" content="https://cdn.theatlantic.com/tng/static/theatlantic/common/img/logo-black.c2cba3f6478a.png" />
+                <meta itemprop="width" content="150" />
+                <meta itemprop="height" content="50" />
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- Mobile only ad -->
+    <gpt-ad targeting-pos="boxonly" format="injector" lazy-load="0" id="ad-boxonly">
+      <gpt-sizeset viewport-size="[0, 0]" sizes="[[300,250]]"></gpt-sizeset>
+      <gpt-sizeset viewport-size="[680, 0]" sizes=""></gpt-sizeset>
+    </gpt-ad>
+
+
+    <!-- Article "Cover" -->
+    <div class="article-above fluid-container">
+
+        
+<div class="article-cover">
+    <div class="article-cover-content-wrapper">
+        <div class="article-cover-content" id="main-content">
+            <h1 class="hed">How Aristotle Created the Computer</h1>
+            
+            <p class="dek" itemprop="description">The philosophers he influenced set the stage for the technological revolution that remade our world.</p>
+            
+        </div>
+    </div>
+
+    
+      
+
+        <figure class="lead-img "  itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+            <div class="img-wrapper">
+                <picture class="img">
+                  
+                    <img src="https://cdn.theatlantic.com/thumbor/1EQ7t4Z4ZcbouvK7TW6Oqa0wv5M=/1920x1280/media/img/2017/03/08/Aristotle1_1/original.jpg" alt="" />
+                  
+                    <!-- Google Metadata -->
+                    <meta itemprop="url" content="https://cdn.theatlantic.com/thumbor/1EQ7t4Z4ZcbouvK7TW6Oqa0wv5M=/1920x1280/media/img/2017/03/08/Aristotle1_1/original.jpg" />
+                    <meta itemprop="height" content="1280" />
+                    <meta itemprop="width" content="1920" />
+                </picture>
+            </div>
+                
+                <figcaption>
+                    
+                    
+                        <span class="credit">Wikimedia / donatas1205 / Billion Photos / vgeny Karandaev / The Atlantic</span>
+                    
+                </figcaption>
+                
+        </figure>
+        
+    
+</div>
+
+
+        
+            <div class="article-cover-extra-wrapper">
+                <div class="article-cover-extra">
+                    <ul class="metadata">
+                        
+                        <li class="byline" data-omni-click="r'article',r' ',d,r'author',r' ',@href">Story by  <span itemprop="author" itemscope itemtype="https://schema.org/Person"><a href="/author/chris-dixon/" itemprop="url" title="Chris Dixon" data-omni-click="inherit"><span itemprop="name">Chris Dixon</span></a></span></li>
+                        
+                        
+                        <li class="secondary-byline"></li>
+                        
+                        <li class="c-list__container">
+                            <div class="date">
+                                
+                                    <time itemprop="datePublished" datetime="2017-03-20T08:00:00">March 20, 2017</time>
+                                
+                            </div>
+
+                            
+                            <div class="category">
+                                <a href="/technology/" class="rubric" data-omni-click="r'article',r' ',d,r'rubric',r' ',@href">
+                                Technology</a>
+                            </div>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div class="ad-article-wrapper">
+            <gpt-ad id="ad-boxtop" targeting-pos="boxtop" defer="1"
+                class="ad ad-article" format="rrail" lazy-load="1.5">
+                <gpt-sizeset viewport-size="[0, 0]" sizes="[]"></gpt-sizeset>
+                <gpt-sizeset viewport-size="[1010, 0]" sizes="[[300, 250], [300, 600]]"></gpt-sizeset>
+            </gpt-ad>
+        </div>
+
+        
+    </div>
+
+    
+
+    <div class="article-body js-article-container" itemprop="articleBody">
+    
+        
+<section class="c-share-social js-share-social-sticky" id="share-social">
+  <ul class="c-share-social__list">
+    <li class="c-share-social__item">
+      
+      <a class="c-share-social__link js-share-social__link" href="https://www.facebook.com/sharer/sharer.php?u=https%3A//www.theatlantic.com/technology/archive/2017/03/aristotle-computer/518697/%3Futm_source%3Dfacebook%26utm_medium%3Dsocial%26utm_campaign%3Dshare" data-width="430" data-height="620" target="_blank" rel="noopener">
+        <svg class="c-share-social__link-icon"><use xlink:href="#icon-social-facebook"></use></svg>
+      </a>
+    </li>
+    <li class="c-share-social__item">
+       
+      <a class="c-share-social__link" href="https://twitter.com/intent/tweet?text=How%20Aristotle%20created%20the%20computer%2C%20by%20%40cdixon&url=https%3A//www.theatlantic.com/technology/archive/2017/03/aristotle-computer/518697/%3Futm_source%3Dtwitter%26utm_medium%3Dsocial%26utm_campaign%3Dshare" data-width="600" data-height="250" target="_blank" rel="noopener">
+        <svg class="c-share-social__link-icon"><use xlink:href="#icon-social-twitter"></use></svg>
+      </a>
+    </li>
+    <li class="c-share-social__item c-share-social__item--copy-link js-copy-link-container">
+      <button class="c-share-social__btn js-copy-link-btn" data-clipboard-text="https://www.theatlantic.com/technology/archive/2017/03/aristotle-computer/518697/?utm_source=share&utm_campaign=share">
+        <svg class="c-share-social__link-icon"><use xlink:href="#icon-copy-link"></use></svg>
+        <div class="c-share-social__success-icon js-social-success-icon">Link Copied</div>
+      </button>
+    </li>
+    <li class="c-share-social__item">
+        
+      <a class="c-share-social__link" href="mailto:?&amp;subject=How%20Aristotle%20Created%20the%20Computer&amp;body=The%20philosophers%20he%20influenced%20set%20the%20stage%20for%20the%20technological%20revolution%20that%20remade%20our%20world.%0A%0ARead More:%0Ahttps%3A//www.theatlantic.com/technology/archive/2017/03/aristotle-computer/518697/%3Futm_source=atl%26utm_medium=email%26utm_campaign=share" target="_blank" rel="noopener">
+        <svg class="c-share-social__link-icon"><use xlink:href="#icon-social-email"></use></svg>
+      </a>
+    </li>
+  </ul>
+</section>
+    
+
+    
+        <div class="injector-promo-wrapper--article-top js-inject-promo"></div>
+        
+
+        <section id="article-section-1"><p class="dropcap"><span style="text-transform:uppercase;">T<span class="smallcaps">HE HISTORY Of</span> </span>computers is often told as a history of objects, from the abacus to the Babbage engine up through the code-breaking machines of World War II. In fact, it is better understood as a history of ideas, mainly ideas that emerged from mathematical logic, an obscure and cult-like discipline that first developed in the 19th century. Mathematical logic was pioneered by philosopher-mathematicians, most notably George Boole and Gottlob Frege, who were themselves inspired by Leibniz’s dream of a universal “concept language,” and the ancient logical system of Aristotle.</p><p><i class="audm--listen-cta">Listen to the audio version of this article:</i><iframe width="100%" height="166" scrolling="no" frameborder="no" class="lazyload" data-src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/314142239&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe><i class="audm--download-cta">Feature stories, read aloud: <a href="https://goo.gl/PzAKpg" data-omni-click="r'article',r'',d,r'intext',r'0',r'518697'">download the Audm app for your iPhone.</a></i></p></section><div class="ad-boxinjector-wrapper"><gpt-ad targeting-pos="boxinjector1" format="injector" class="ad ad-boxinjector" lazy-load="2">
+
+    
+    
+        <gpt-sizeset viewport-size="[0, 0]" sizes="[[300, 250],[1, 3],[1,4]]"></gpt-sizeset>
+        <gpt-sizeset viewport-size="[1010, 0]" sizes="[[728, 90],[728, 350],[970, 250],[1,3],[970,350],[1,4]]"></gpt-sizeset>
+    
+
+    
+
+    
+</gpt-ad></div><section id="article-section-2"><p>Mathematical logic was initially considered a hopelessly abstract subject with no conceivable applications. As one computer scientist <a href="http://bactra.org/notebooks/mathematical-logic.html" target="_blank" data-omni-click="r'article',r'',d,r'intext',r'1',r'518697'">commented</a>: “If, in 1901, a talented and sympathetic outsider had been called upon to survey the sciences and name the branch which would be least fruitful in [the] century ahead, his choice might well have settled upon mathematical logic.” And yet, it would provide the foundation for a field that would have more impact on the modern world than any other.</p><p>The evolution of computer science from mathematical logic culminated in the 1930s, with two landmark papers: Claude Shannon’s “<a href="http://www.ccapitalia.net/descarga/docs/1938-shannon-analysis-relay-switching-circuits.pdf" target="_blank" data-omni-click="r'article',r'',d,r'intext',r'2',r'518697'">A Symbolic Analysis of Switching and Relay Circuits</a>,” and Alan Turing’s “<a href="http://www.dna.caltech.edu/courses/cs129/caltech_restricted/Turing_1936_IBID.pdf" target="_blank" data-omni-click="r'article',r'',d,r'intext',r'3',r'518697'">On Computable Numbers, With an Application to the <em>Entscheidungsproblem</em></a>.” In the history of computer science, Shannon and Turing are towering figures, but the importance of the philosophers and logicians who preceded them is frequently overlooked.</p><p>A well-known history of computer science describes Shannon’s paper as “possibly the most important, and also the most noted, master’s thesis of the century.” Shannon wrote it as an electrical engineering student at MIT. His adviser, Vannevar Bush, built a prototype computer known as the <a href="http://www.mit.edu/~klund/analyzer/" target="_blank" data-omni-click="r'article',r'',d,r'intext',r'4',r'518697'">Differential Analyzer</a> that could rapidly calculate differential equations. The device was mostly mechanical, with subsystems controlled by electrical relays, which were organized in an ad hoc manner as there was not yet a systematic theory underlying circuit design. Shannon’s thesis topic came about when Bush recommended he try to discover such a theory.</p><aside class="pullquote instapaper_ignore">“Mathematics may be defined as the subject in which we never know what we are talking about.”</aside><p>Shannon’s paper is in many ways a typical electrical-engineering paper, filled with equations and diagrams of electrical circuits. What is unusual is that the primary reference was a 90-year-old work of mathematical philosophy, George Boole’s <em>The Laws of Thought</em>.</p></section><div class="ad-boxright-wrapper" data-pos="boxright"><gpt-ad targeting-pos="boxright1" format="rrail" class="ad ad-boxright" lazy-load="2">
+
+    
+    
+
+    
+
+    
+        <gpt-sizeset viewport-size="[0, 0]" sizes="[[300,250]]"></gpt-sizeset>
+        <gpt-sizeset viewport-size="[1010, 0]" sizes="[[300,250],[300,600]]"></gpt-sizeset>
+    
+</gpt-ad></div><section id="article-section-3"><p class="dropcap"><span class="smallcaps">Today, Boole’s name</span> is well known to computer scientists (many programming languages have a basic data type called a Boolean), but in 1938 he was rarely read outside of philosophy departments. Shannon himself encountered Boole’s work in an undergraduate philosophy class. “It just happened that no one else was familiar with both fields at the same time,” he <a href="http://georgeboole.com/boole/legacy/engineering/" target="_blank" data-omni-click="r'article',r'',d,r'intext',r'5',r'518697'">commented</a> later.</p><p>Boole is often described as a mathematician, but he saw himself as a philosopher, following in the footsteps of Aristotle. <em>The Laws of Thought </em>begins with a description of his goals, to investigate the fundamental laws of the operation of the human mind:</p><blockquote>
+<p>The design of the following treatise is to investigate the fundamental laws of those operations of the mind by which reasoning is performed; to give expression to them in the symbolical language of a Calculus, and upon this foundation to establish the science of Logic ... and, finally, to collect ... some probable intimations concerning the nature and constitution of the human mind.</p>
+</blockquote><p>He then pays tribute to Aristotle, the inventor of logic, and the primary influence on <a href="http://www.gutenberg.org/files/15114/15114-pdf.pdf" data-omni-click="r'article',r'',d,r'intext',r'6',r'518697'">his own work</a>:</p><blockquote>
+<p>In its ancient and scholastic form, indeed, the subject of Logic stands almost exclusively associated with the great name of Aristotle. As it was presented to ancient Greece in the partly technical, partly metaphysical disquisitions of <em>T</em><em>he Organon</em>, such, with scarcely any essential change, it has continued to the present day.</p>
+</blockquote><p>Trying to improve on the logical work of Aristotle was an intellectually daring move. Aristotle’s logic, presented in his six-part book <em>The Organon</em>, occupied a central place in the scholarly canon for more than 2,000 years. It was widely believed that Aristotle had written almost all there was to say on the topic. The great philosopher Immanuel Kant <a href="https://books.google.com/books?id=WJVYp0C0taYC&amp;pg=PA36&amp;lpg=PA36&amp;dq=unable+to+take+a+single+step+forward,+and+therefore+seems+to+all+appearance+to+be+finished+and+complete&amp;source=bl&amp;ots=W4Lrt9I80J&amp;sig=KpZlOd-Yc9brgTksIJJZcxUD-Mg&amp;hl=en&amp;sa=X&amp;ved=0ahUKEwjeg8i1iLvQAhVH6IMKHTMXDMgQ6AEIHTAA#v=onepage&amp;q=unable%20to%20take%20a%20single%20step%20forward%2C%20and%20therefore%20seems%20to%20all%20appearance%20to%20be%20finished%20and%20complete&amp;f=false" target="_blank" data-omni-click="r'article',r'',d,r'intext',r'7',r'518697'">commented</a> that, since Aristotle, logic had been “unable to take a single step forward, and therefore seems to all appearance to be finished and complete.”</p></section><div class="ad-boxinjector-wrapper"><gpt-ad targeting-pos="boxinjector2" format="injector" class="ad ad-boxinjector" lazy-load="2">
+
+    
+    
+        <gpt-sizeset viewport-size="[0, 0]" sizes="[[300, 250],[1, 3],[1,4]]"></gpt-sizeset>
+        <gpt-sizeset viewport-size="[1010, 0]" sizes="[[728, 90],[728, 350],[970, 250],[1,3],[970,350],[1,4]]"></gpt-sizeset>
+    
+
+    
+
+    
+</gpt-ad></div><section id="article-section-4"><p>Aristotle’s central observation was that arguments were valid or not based on their logical structure, independent of the non-logical words involved. The most famous argument schema he discussed is known as the syllogism:</p><ul>
+	<li>All men are mortal.</li>
+	<li>Socrates is a man.</li>
+	<li>Therefore, Socrates is mortal.</li>
+</ul><p>You can replace “Socrates” with any other object, and “mortal” with any other predicate, and the argument remains valid. The validity of the argument is determined solely by the logical structure. The logical words — “all,” “is,” are,” and “therefore” — are doing all the work.</p><p>Aristotle also defined a set of basic axioms from which he derived the rest of his logical system:</p><ul>
+	<li>An object is what it is (Law of Identity)</li>
+	<li>No statement can be both true and false (Law of Non-contradiction)</li>
+	<li>Every statement is either true or false (Law of the Excluded Middle)</li>
+</ul><p>These axioms weren’t meant to describe how people actually think (that would be the realm of psychology), but how an idealized, perfectly rational person ought to think.</p><p>Aristotle’s axiomatic method influenced an even more famous book, Euclid’s <em>Elements</em>, which is <a href="https://en.wikipedia.org/wiki/Euclid%27s_Elements" target="_blank" data-omni-click="r'article',r'',d,r'intext',r'8',r'518697'">estimated</a> to be second only to the Bible in the number of editions printed.</p><figure style="max-width: 630.0px;"><picture style="display: block; position:relative; width:100%; height:0; overflow:hidden; padding-bottom:60.79365079365079%;"><img alt="" data-src="https://cdn.theatlantic.com/thumbor/_6VsF5Zi9f5fXifr2X1da70hvrc=/630x383/filters:format(png)/media/img/posts/2017/03/InternalforAristotle1/original.png" class="lazyload" style="position:absolute; width:100%; height:100%; top:0; left:0; border:0;"></picture>
+<figcaption class="caption">A fragment of the <em>Elements </em>(Wikimedia Commons)</figcaption>
+</figure><p>Although ostensibly about geometry, the<em> Elements</em> became a standard textbook for teaching rigorous deductive reasoning. (Abraham Lincoln once said that he learned sound legal argumentation from studying Euclid.) In Euclid’s system, geometric ideas were represented as spatial diagrams. Geometry continued to be practiced this way until René Descartes, in the 1630s, showed that geometry could instead be represented as formulas. His <em>Discourse on Method</em> was the <a href="http://www.storyofmathematics.com/17th_descartes.html" target="_blank" data-omni-click="r'article',r'',d,r'intext',r'9',r'518697'">first</a> mathematics text in the West to popularize what is now standard algebraic notation — x, y, z for variables, a, b, c for known quantities, and so on.</p></section><div class="ad-boxright-wrapper" data-pos="boxright"><gpt-ad targeting-pos="boxright2" format="rrail" class="ad ad-boxright" lazy-load="2">
+
+    
+    
+
+    
+
+    
+        <gpt-sizeset viewport-size="[0, 0]" sizes="[[300,250]]"></gpt-sizeset>
+        <gpt-sizeset viewport-size="[1010, 0]" sizes="[[300,250],[300,600]]"></gpt-sizeset>
+    
+</gpt-ad></div><section id="article-section-5"><p class="dropcap"><span class="smallcaps">Descartes’s algebra allowed</span> mathematicians to move beyond spatial intuitions to manipulate symbols using precisely defined formal rules. This shifted the dominant mode of mathematics from diagrams to formulas, leading to, among other things, the development of calculus, invented roughly 30 years after Descartes by, independently, Isaac Newton and Gottfried Leibniz.</p><p>Boole’s goal was to do for Aristotelean logic what Descartes had done for Euclidean geometry: free it from the limits of human intuition by giving it a precise algebraic notation. To give a simple example, when Aristotle wrote:</p><p>All men are mortal.</p><p>Boole replaced the words “men” and “mortal” with variables, and the logical words “all” and “are” with arithmetical operators:</p><p><em>x </em>=<em> x * y</em></p><p>Which could be interpreted as “Everything in the set <em>x</em> is also in the set <em>y</em>.”</p><p>The <em>Laws of Thought</em> created a new scholarly field—mathematical logic—which in the following years became one of the most active areas of research for mathematicians and philosophers. Bertrand Russell called the <em>Laws of Thought</em> “the work in which pure mathematics was discovered.”</p><p>Shannon’s insight was that Boole’s system could be mapped directly onto electrical circuits. At the time, electrical circuits had no systematic theory governing their design. Shannon realized that the right theory would be “exactly analogous to the calculus of propositions used in the symbolic study of logic.”</p></section><div class="ad-boxinjector-wrapper"><gpt-ad targeting-pos="boxinjector3" format="injector" class="ad ad-boxinjector" lazy-load="2">
+
+    
+    
+        <gpt-sizeset viewport-size="[0, 0]" sizes="[[300, 250],[1, 3],[1,4]]"></gpt-sizeset>
+        <gpt-sizeset viewport-size="[1010, 0]" sizes="[[728, 90],[728, 350],[970, 250],[1,3],[970,350],[1,4]]"></gpt-sizeset>
+    
+
+    
+
+    
+</gpt-ad></div><section id="article-section-6"><p>He showed the correspondence between electrical circuits and Boolean operations in a simple chart:</p><figure style="max-width: 414.0px;"><picture style="display: block; position:relative; width:100%; height:0; overflow:hidden; padding-bottom:42.7536231884058%;"><img alt="https://cdn-images-1.medium.com/max/800/0*K9_VBhOT_82AKdAL." border="0" data-srcset="https://cdn.theatlantic.com/thumbor/hdOS7yVz0k8tQ6U_VlbF5FV1ZcE=/414x177/filters:format(png)/media/img/posts/2017/03/InternalAristotle3/original.png, https://cdn.theatlantic.com/thumbor/qnwTFn6b_wR_0tkLp2pnTILZWwg=/828x354/filters:format(png)/media/img/posts/2017/03/InternalAristotle3/original.png 2x" class="lazyload" style="position:absolute; width:100%; height:100%; top:0; left:0; border:0;"></picture>
+<figcaption class="caption">Shannon’s mapping from electrical circuits to symbolic logic (University of Virginia)</figcaption>
+</figure><p>This correspondence allowed computer scientists to import decades of work in logic and mathematics by Boole and subsequent logicians. In the second half of his paper, Shannon showed how Boolean logic could be used to create a circuit for adding two binary digits.</p><figure class="right" style="max-width: 371.0px;"><picture style="display: block; position:relative; width:100%; height:0; overflow:hidden; padding-bottom:46.091644204851754%;"><img alt="https://cdn-images-1.medium.com/max/800/0*OUD0N1RzLXZK8nLj." border="0" data-src="https://cdn.theatlantic.com/thumbor/PQ32nb3PxNcGd7uR2EJkRsgCj6g=/filters:format(png)/media/img/posts/2017/03/InternalAristotle4/original.png" class="lazyload" style="position:absolute; width:100%; height:100%; top:0; left:0; border:0;"></picture>
+<figcaption class="caption">Shannon’s adder circuit (University of Virginia<em>)</em></figcaption>
+</figure><p>By stringing these adder circuits together, arbitrarily complex arithmetical operations could be constructed. These circuits would become the basic building blocks of what are now known as <a href="https://en.wikipedia.org/wiki/Arithmetic_logic_unit" target="_blank" data-omni-click="r'article',r'',d,r'intext',r'10',r'518697'">arithmetical logic units</a>, a key component in modern computers.</p><p class="dropcap"><span class="smallcaps">Another way to</span> characterize Shannon’s achievement is that he was first to distinguish between the <em>logical</em> and the <em>physical</em> layer of computers. (This distinction has become so fundamental to computer science that it might seem surprising to modern readers how insightful it was at the time—a reminder of the adage that “the philosophy of one century is the common sense of the next.”)</p><p>Since Shannon’s paper, a vast amount of progress has been made on the physical layer of computers, including the invention of the transistor in 1947 by William Shockley and his colleagues at Bell Labs. Transistors are dramatically improved versions of Shannon’s electrical relays — the best known way to physically encode Boolean operations. Over the next 70 years, the semiconductor industry packed more and more transistors into smaller spaces. A 2016 iPhone <a href="http://www.macrumors.com/2016/09/12/cpu-improvements-iphone-7-apple-watch/" target="_blank" data-omni-click="r'article',r'',d,r'intext',r'11',r'518697'">has</a> about 3.3 billion transistors, each one a “relay switch” like those pictured in Shannon’s diagrams.</p></section><div class="ad-boxright-wrapper" data-pos="boxright"><gpt-ad targeting-pos="boxright3" format="rrail" class="ad ad-boxright" lazy-load="2">
+
+    
+    
+
+    
+
+    
+        <gpt-sizeset viewport-size="[0, 0]" sizes="[[300,250]]"></gpt-sizeset>
+        <gpt-sizeset viewport-size="[1010, 0]" sizes="[[300,250],[300,600]]"></gpt-sizeset>
+    
+</gpt-ad></div><section id="article-section-7"><p>While Shannon showed how to map logic onto the physical world, Turing showed how to design computers in the language of mathematical logic. When Turing wrote his paper, in 1936, he was trying to solve “the decision problem,” first identified by the mathematician David Hilbert, who asked whether there was an algorithm that could determine whether an arbitrary mathematical statement is true or false. In contrast to Shannon’s paper, Turing’s paper is highly technical. Its primary historical significance lies not in its answer to the decision problem,  but in the template for computer design it provided along the way.</p><p>Turing was working in a tradition stretching back to Gottfried Leibniz, the philosophical giant who developed calculus independently of Newton. Among Leibniz’s many contributions to modern thought, one of the most intriguing was the idea of a new language he called the “<a href="https://en.wikipedia.org/wiki/Characteristica_universalis" target="_blank" data-omni-click="r'article',r'',d,r'intext',r'12',r'518697'">universal characteristic</a>” that, he imagined, could represent all possible mathematical and scientific knowledge. Inspired in part by the 13th-century religious philosopher <a href="https://en.wikipedia.org/wiki/Ramon_Llull" target="_blank" data-omni-click="r'article',r'',d,r'intext',r'13',r'518697'">Ramon Llull</a>, Leibniz postulated that the language would be ideographic like Egyptian hieroglyphics, except characters would correspond to “atomic” concepts of math and science. He argued this language would give humankind an “instrument” that could enhance human reason “to a far greater extent than optical instruments” like the microscope and telescope.</p></section><div class="ad-boxinjector-wrapper"><gpt-ad targeting-pos="boxinjector4" format="injector" class="ad ad-boxinjector" lazy-load="2">
+
+    
+    
+        <gpt-sizeset viewport-size="[0, 0]" sizes="[[300, 250],[1, 3],[1,4]]"></gpt-sizeset>
+        <gpt-sizeset viewport-size="[1010, 0]" sizes="[[728, 90],[728, 350],[970, 250],[1,3],[970,350],[1,4]]"></gpt-sizeset>
+    
+
+    
+
+    
+</gpt-ad></div><section id="article-section-8"><p>He also <a href="http://publicdomainreview.org/2016/11/10/let-us-calculate-leibniz-llull-and-computational-imagination/" data-omni-click="r'article',r'',d,r'intext',r'14',r'518697'">imagined</a> a machine that could process the language, which he called the calculus ratiocinator.</p><blockquote>
+<p>If controversies were to arise, there would be no more need of disputation between two philosophers than between two accountants. For it would suffice to take their pencils in their hands, and say to each other: <em>Calculemus</em>—Let us calculate.</p>
+</blockquote><p class="dropcap"><span class="smallcaps">Leibniz didn’t get</span> the opportunity to develop his universal language or the corresponding machine (although he did invent a relatively simple calculating machine, the <a href="https://en.wikipedia.org/wiki/Stepped_reckoner" target="_blank" data-omni-click="r'article',r'',d,r'intext',r'15',r'518697'">stepped reckoner</a>). The first credible attempt to realize Leibniz’s dream came in 1879, when the German philosopher Gottlob Frege published his landmark logic treatise <a href="https://en.wikipedia.org/wiki/Begriffsschrift" target="_blank" title="Begriffsschrift" data-omni-click="r'article',r'',d,r'intext',r'16',r'518697'"><em>Begriffsschrift</em></a><em>. </em>Inspired by Boole’s attempt to improve Aristotle’s logic, Frege developed a much more advanced logical system. The logic taught in philosophy and computer-science classes today—first-order or predicate logic—is only a slight modification of Frege’s system.</p><p>Frege is generally considered one of the most important philosophers of the 19th century. Among other things, he is credited with catalyzing what noted philosopher Richard Rorty called the “<a href="https://en.wikipedia.org/wiki/Linguistic_turn" target="_blank" data-omni-click="r'article',r'',d,r'intext',r'17',r'518697'">linguistic turn</a>” in philosophy. As Enlightenment philosophy was obsessed with questions of knowledge, philosophy after Frege became obsessed with questions of language. His disciples included two of the most important philosophers of the 20th century—Bertrand Russell and Ludwig Wittgenstein.</p></section><div class="ad-boxright-wrapper" data-pos="boxright"><gpt-ad targeting-pos="boxright4" format="rrail" class="ad ad-boxright" lazy-load="2">
+
+    
+    
+
+    
+
+    
+        <gpt-sizeset viewport-size="[0, 0]" sizes="[[300,250]]"></gpt-sizeset>
+        <gpt-sizeset viewport-size="[1010, 0]" sizes="[[300,250],[300,600]]"></gpt-sizeset>
+    
+</gpt-ad></div><section id="article-section-9"><p>The major innovation of Frege’s logic is that it much more accurately represented the logical structure of ordinary language. Among other things, Frege was the first to use quantifiers (“for every,” “there exists”) and to separate objects from predicates. He was also the first to develop what today are fundamental concepts in computer science like recursive functions and variables with scope and binding.</p><p>Frege’s formal language — what he called his “concept-script” — is made up of meaningless symbols that are manipulated by well-defined rules. The language is only given meaning by an interpretation, which is specified separately (this distinction would later come to be called syntax versus semantics). This turned logic into what the eminent computer scientists Allan Newell and Herbert Simon called “the symbol game,” “played with meaningless tokens according to certain purely syntactic rules.”</p><blockquote>
+<p>All meaning had been purged. One had a mechanical system about which various things could be proved. Thus progress was first made by walking away from all that seemed relevant to meaning and human symbols.</p>
+</blockquote><p>As Bertrand Russell famously quipped: “Mathematics may be defined as the subject in which we never know what we are talking about, nor whether what we are saying is true.”</p><p class="dropcap"><span class="smallcaps">An unexpected consequence</span> of Frege’s work was the discovery of weaknesses in the foundations of mathematics. For example, Euclid’s<em> Elements — </em>considered the gold standard of logical rigor for thousands of years — turned out to be full of logical mistakes. Because Euclid used ordinary words like “line” and “point,” he — and centuries of readers — deceived themselves into making assumptions about sentences that contained those words. To give one relatively simple example, in ordinary usage, the word “line” implies that if you are given three distinct points on a line, one point must be between the other two. But when you define “line” using formal logic, it turns out “between-ness” also needs to be defined—something Euclid overlooked. Formal logic makes gaps like this easy to spot.</p></section><div class="ad-boxinjector-wrapper"><gpt-ad targeting-pos="boxinjector5" format="injector" class="ad ad-boxinjector" lazy-load="2">
+
+    
+    
+        <gpt-sizeset viewport-size="[0, 0]" sizes="[[300, 250],[1, 3],[1,4]]"></gpt-sizeset>
+        <gpt-sizeset viewport-size="[1010, 0]" sizes="[[728, 90],[728, 350],[970, 250],[1,3],[970,350],[1,4]]"></gpt-sizeset>
+    
+
+    
+
+    
+</gpt-ad></div><section id="article-section-10"><p>This realization created a <a href="https://en.wikipedia.org/wiki/Foundations_of_mathematics#Foundational_crisis" target="_blank" data-omni-click="r'article',r'',d,r'intext',r'18',r'518697'">crisis</a> in the foundation of mathematics. If the <em>Elements</em> — the bible of mathematics — contained logical mistakes, what other fields of mathematics did too? What about sciences like physics that were built on top of mathematics?</p><p>The good news is that the same logical methods used to uncover these errors could also be used to correct them. Mathematicians started rebuilding the foundations of mathematics from the bottom up. In 1889, Giuseppe Peano <a href="https://en.wikipedia.org/wiki/Peano_axioms" target="_blank" data-omni-click="r'article',r'',d,r'intext',r'19',r'518697'">developed</a> axioms for arithmetic, and in 1899, David Hilbert <a href="https://en.wikipedia.org/wiki/Hilbert%27s_axioms" target="_blank" data-omni-click="r'article',r'',d,r'intext',r'20',r'518697'">did</a> the same for geometry. Hilbert also outlined a program to formalize the remainder of mathematics, with specific requirements that any such attempt should satisfy, including:</p><ul>
+	<li><em>Completeness: </em>There should be a proof that all true mathematical statements can be proved in the formal system.</li>
+	<li><em>Decidability: </em>There should be an algorithm for deciding the truth or falsity of any mathematical statement. (This is the “<em>Entscheidungsproblem</em>” or “decision problem” referenced in Turing’s paper.)</li>
+</ul><p>Rebuilding mathematics in a way that satisfied these requirements became known as Hilbert’s program. Up through the 1930s, this was the focus of a core group of logicians including Hilbert, Russell, Kurt Gödel, John Von Neumann, Alonzo Church, and, of course, Alan Turing.</p><aside class="pullquote instapaper_ignore">“In science, novelty emerges only with difficulty.”</aside><p>Hilbert’s program proceeded on at least two fronts. On the first front, logicians created logical systems that tried to prove Hilbert’s requirements either satisfiable or not.</p></section><div class="ad-boxright-wrapper" data-pos="boxright"><gpt-ad targeting-pos="boxright5" format="rrail" class="ad ad-boxright" lazy-load="2">
+
+    
+    
+
+    
+
+    
+        <gpt-sizeset viewport-size="[0, 0]" sizes="[[300,250]]"></gpt-sizeset>
+        <gpt-sizeset viewport-size="[1010, 0]" sizes="[[300,250],[300,600]]"></gpt-sizeset>
+    
+</gpt-ad></div><section id="article-section-11"><p>On the second front, mathematicians used logical concepts to rebuild classical mathematics. For example, Peano’s system for arithmetic starts with a simple function called the successor function which increases any number by one. He uses the successor function to recursively define <a href="https://en.wikipedia.org/wiki/Peano_axioms#Addition" target="_blank" data-omni-click="r'article',r'',d,r'intext',r'21',r'518697'">addition</a>, uses addition to recursively define <a href="https://en.wikipedia.org/wiki/Peano_axioms#Multiplication" target="_blank" data-omni-click="r'article',r'',d,r'intext',r'22',r'518697'">multiplication</a>, and so on, until all the operations of number theory are defined. He then uses those definitions, along with formal logic, to prove theorems about arithmetic.</p><p>The historian Thomas Kuhn once observed that “in science, novelty emerges only with difficulty.” Logic in the era of Hilbert’s program was a tumultuous process of creation and destruction. One logician would build up an elaborate system and another would tear it down.</p><p>The favored tool of destruction was the construction of self-referential, paradoxical statements that showed the axioms from which they were derived to be inconsistent. A simple form of this  “liar’s paradox” is the sentence:</p><p>This sentence is false.</p><p>If it is true then it is false, and if it is false then it is true, leading to an endless loop of self-contradiction.</p><p>Russell made the first notable use of the liar’s paradox in mathematical logic. He showed that Frege’s system allowed self-contradicting sets to be derived:</p><blockquote>
+<p>Let <em>R</em> be the set of all sets that are not members of themselves. If <em>R</em> is not a member of itself, then its definition dictates that it must contain itself, and if it contains itself, then it contradicts its own definition as the set of all sets that are not members of themselves.</p>
+</blockquote><p>This became known as Russell’s paradox and was seen as a serious flaw in Frege’s achievement. (Frege himself was shocked by this discovery. He replied to Russell: “Your discovery of the contradiction caused me the greatest surprise and, I would almost say, consternation, since it has shaken the basis on which I intended to build my arithmetic.”)</p></section><div class="ad-boxinjector-wrapper"><gpt-ad targeting-pos="boxinjector6" format="injector" class="ad ad-boxinjector" lazy-load="2">
+
+    
+    
+        <gpt-sizeset viewport-size="[0, 0]" sizes="[[300, 250],[1, 3],[1,4]]"></gpt-sizeset>
+        <gpt-sizeset viewport-size="[1010, 0]" sizes="[[728, 90],[728, 350],[970, 250],[1,3],[970,350],[1,4]]"></gpt-sizeset>
+    
+
+    
+
+    
+</gpt-ad></div><section id="article-section-12"><p>Russell and his colleague Alfred North Whitehead put forth the most ambitious attempt to complete Hilbert’s program with the <em>Principia Mathematica, </em>published in three volumes between 1910 and 1913<em>. </em>The <em>Principia’s</em> method was so detailed that it took over 300 pages to get to the proof that 1+1=2.</p><p>Russell and Whitehead tried to resolve Frege’s paradox by introducing what they called type theory. The idea was to partition formal languages into multiple levels or types. Each level could make reference to levels below, but not to their own or higher levels. This resolved self-referential paradoxes by, in effect, banning self-reference. (This solution was not popular with logicians, but it did influence computer science — most modern computer languages have features inspired by type theory.)</p><p>Self-referential paradoxes ultimately showed that Hilbert’s program could never be successful. The first blow came in 1931, when Gödel published his now famous incompleteness theorem, which proved that any consistent logical system powerful enough to encompass arithmetic must also contain statements that are true but cannot be proven to be true. (Gödel’s incompleteness theorem is one of the few logical results that has been broadly popularized, thanks to books like <a href="https://en.wikipedia.org/wiki/G%C3%B6del,_Escher,_Bach" target="_blank" data-omni-click="r'article',r'',d,r'intext',r'23',r'518697'"><em>Gödel, Escher, Bach</em></a> and <em><a href="https://www.amazon.com/dp/B00ARGXG7Q/ref=dp-kindle-redirect?_encoding=UTF8&amp;btkr=1" target="_blank" data-omni-click="r'article',r'',d,r'intext',r'24',r'518697'">The Emperor’s New Mind</a>).</em></p><p class="dropcap"><span class="smallcaps">The final blow</span> came when Turing and Alonzo Church independently proved that no algorithm could exist that determined whether an arbitrary mathematical statement was true or false. (Church did this by inventing an entirely different system called the <a href="https://en.wikipedia.org/wiki/Lambda_calculus" target="_blank" data-omni-click="r'article',r'',d,r'intext',r'25',r'518697'">lambda calculus</a>, which would later inspire computer languages like <a href="https://en.wikipedia.org/wiki/Lisp_%28programming_language%29" target="_blank" data-omni-click="r'article',r'',d,r'intext',r'26',r'518697'">Lisp</a>.) The answer to the decision problem was negative.</p></section><div class="ad-boxright-wrapper" data-pos="boxright"><gpt-ad targeting-pos="boxright6" format="rrail" class="ad ad-boxright" lazy-load="2">
+
+    
+    
+
+    
+
+    
+        <gpt-sizeset viewport-size="[0, 0]" sizes="[[300,250]]"></gpt-sizeset>
+        <gpt-sizeset viewport-size="[1010, 0]" sizes="[[300,250],[300,600]]"></gpt-sizeset>
+    
+</gpt-ad></div><section id="article-section-13"><p>Turing’s key insight came in the first section of his famous 1936 paper, “On Computable Numbers, With an Application to the <em>Entscheidungsproblem</em>.” In order to rigorously formulate the decision problem (the “<em>Entscheidungsproblem</em>”), Turing first created a mathematical model of what it means to be a computer (today, machines that fit this model are known as “universal Turing machines”). As the logician Martin Davis describes it:</p><blockquote>
+<p>Turing knew that an algorithm is typically specified by a list of rules that a person can follow in a precise mechanical manner, like a recipe in a cookbook. He was able to show that such a person could be limited to a few extremely simple basic actions without changing the final outcome of the computation.</p>
+
+<p>Then, by proving that no machine performing only those basic actions could determine whether or not a given proposed conclusion follows from given premises using Frege’s rules, he was able to conclude that no algorithm for the <em>Entscheidungsproblem</em> exists.</p>
+
+<p>As a byproduct, he found a mathematical model of an all-purpose computing machine.</p>
+</blockquote><p>Next, Turing showed how a program could be stored inside a computer alongside the data upon which it operates. In today’s vocabulary, we’d say that he invented the “stored-program” architecture that underlies most modern computers:</p><blockquote>
+<p>Before Turing, the general supposition was that in dealing with such machines the three categories — machine, program, and data — were entirely separate entities. The machine was a physical object; today we would call it hardware. The program was the plan for doing a computation, perhaps embodied in punched cards or connections of cables in a plugboard. Finally, the data was the numerical input. Turing’s universal machine showed that the distinctness of these three categories is an illusion.</p>
+</blockquote><p>This was the first rigorous demonstration that any computing logic that could be encoded in hardware could also be encoded in software. The architecture Turing described was later dubbed the “Von Neumann architecture” — but modern historians generally agree it came from Turing, as, apparently, did Von Neumann <a href="https://en.wikipedia.org/wiki/Alan_Turing#cite_note-36" target="_blank" data-omni-click="r'article',r'',d,r'intext',r'27',r'518697'">himself</a>.</p></section><div class="ad-boxinjector-wrapper"><gpt-ad targeting-pos="boxinjector7" format="injector" class="ad ad-boxinjector" lazy-load="2">
+
+    
+    
+        <gpt-sizeset viewport-size="[0, 0]" sizes="[[300, 250],[1, 3],[1,4]]"></gpt-sizeset>
+        <gpt-sizeset viewport-size="[1010, 0]" sizes="[[728, 90],[728, 350],[970, 250],[1,3],[970,350],[1,4]]"></gpt-sizeset>
+    
+
+    
+
+    
+</gpt-ad></div><section id="article-section-14"><p>Although, on a technical level, Hilbert’s program was a failure, the efforts along the way demonstrated that large swaths of mathematics could be constructed from logic. And after Shannon and Turing’s insights—showing the connections between electronics, logic and computing—it was now possible to export this new conceptual machinery over to computer design.</p><p>During World War II, this theoretical work was put into practice, when government labs conscripted a number of elite logicians. Von Neumann joined the atomic bomb project at Los Alamos, where he worked on computer design to support physics research. In 1945, he wrote the <a href="http://www.virtualtravelog.net/wp/wp-content/media/2003-08-TheFirstDraft.pdf" target="_blank" data-omni-click="r'article',r'',d,r'intext',r'28',r'518697'">specification</a> of the EDVAC—the first stored-program, logic-based computer—which is generally considered the definitive source guide for modern computer design.</p><p class="dropcap"><span class="smallcaps">Turing joined a</span> secret unit at Bletchley Park, northwest of London, where he helped design computers that were instrumental in breaking German codes. His most enduring contribution to practical computer design was his specification of the ACE, or Automatic Computing Engine.</p><p>As the first computers to be based on Boolean logic and stored-program architectures, the ACE and the EDVAC were similar in many ways. But they also had interesting differences, some of which foreshadowed modern debates in computer design. Von Neumann’s favored designs were similar to modern CISC (“complex”) processors, baking rich functionality into hardware. Turing’s design was more like modern RISC (“reduced”) processors, minimizing hardware complexity and pushing more work to software.</p></section><div class="ad-boxinjector-wrapper"><gpt-ad targeting-pos="boxinjector8" format="injector" class="ad ad-boxinjector" lazy-load="2">
+
+    
+    
+        <gpt-sizeset viewport-size="[0, 0]" sizes="[[300, 250],[1, 3],[1,4]]"></gpt-sizeset>
+        <gpt-sizeset viewport-size="[1010, 0]" sizes="[[728, 90],[728, 350],[970, 250],[1,3],[970,350],[1,4]]"></gpt-sizeset>
+    
+
+    
+
+    
+</gpt-ad></div><section id="article-section-15"><p>Von Neumann thought computer programming would be a tedious, clerical job. Turing, by contrast, said computer programming “should be very fascinating. There need be no real danger of it ever becoming a drudge, for any processes that are quite mechanical may be turned over to the machine itself.”</p><p>Since the 1940s, computer programming has become significantly more sophisticated. One thing that hasn’t changed is that it still primarily consists of programmers specifying rules for computers to follow. In philosophical terms, we’d say that computer programming has followed in the tradition of deductive logic, the branch of logic discussed above, which deals with the manipulation of symbols according to formal rules.</p><p>In the past decade or so, programming has started to change with the growing popularity of machine learning, which involves creating frameworks for machines to learn via statistical inference. This has brought programming closer to the other main branch of logic, inductive logic, which deals with inferring rules from specific instances.</p><p>Today’s most promising machine learning techniques use neural networks, which were first <a href="http://www.cse.chalmers.se/~coquand/AUTOMATA/mcp.pdf" data-omni-click="r'article',r'',d,r'intext',r'29',r'518697'">invented</a> in 1940s by Warren McCulloch and Walter Pitts, whose idea was to develop a calculus for neurons that could, like Boolean logic, be used to construct computer circuits. Neural networks remained esoteric until decades later when they were combined with statistical techniques, which allowed them to improve as they were fed more data. Recently, as computers have become increasingly adept at handling large data sets, these techniques have produced remarkable results. Programming in the future will likely mean exposing neural networks to the world and letting them learn.</p><p>This would be a fitting second act to the story of computers. Logic began as a way to understand the laws of thought. It then helped create machines that could reason according to the rules of deductive logic. Today, deductive and inductive logic are being combined to create machines that both reason and learn. What began, in Boole’s words, with an investigation “concerning the nature and constitution of the human mind,” could result in the creation of new minds—artificial minds—that might someday match or even exceed our own.</p></section>
+
+        
+        <section id="about-the-authors">
+            <address id="article-writer-0" class="c-article-writer lazyload" data-author-id="16581" data-include="css:https://cdn.theatlantic.com/tng/static/frontend/dist/theatlantic/css/components/article-writer.eafcf87eff89.css" itemprop="author" itemtype="https://schema.org/Person" itemscope><meta itemprop="name" content="Chris Dixon"><meta itemprop="url" content="https://www.theatlantic.com/author/chris-dixon/"><div class="c-article-writer__content">
+        <div class="c-article-writer__bio" itemprop="description">
+          <a href="https://www.theatlantic.com/author/chris-dixon/" class="author-link" data-omni-click="inherit">Chris Dixon</a> is a general partner at Andreessen Horowitz.
+        </div></div>
+    </address>
+        </section>
+        
+    
+    </div>
+
+    <div class="article-tools fluid-container">
+        
+        
+        
+        
+<div class="c-sentinel" id="article-end"></div>
+        <div class="article-after">
+            <div class="ad-article-wrapper-bottom">
+                <gpt-ad id="ad-boxbottom" targeting-pos="boxbottom"
+                    class="ad ad-boxbottom" format="rrail" lazy-load="1.5">
+                        <gpt-sizeset viewport-size="[0, 0]" sizes="[]"></gpt-sizeset>
+                        <gpt-sizeset viewport-size="[1010, 0]" sizes="[[300, 250]]"></gpt-sizeset>
+                </gpt-ad>
+            </div>
+            
+        </div>
+    </div>
+</article>
+
+
+
+<div class="l-article-recirc l-article-recirc--feature">
+
+    <section class="l-article-recirc__rivers">
+        <div
+            class="l-article-recirc__popular u-dynamic-content lazyload js-dynamic-content"
+            data-include="/api/2.0/articles/?section=most-popular&page_size=10 module:theatlantic/js/lacroix/components/most-popular"
+            data-insert="false"
+        >
+            <span class="u-dynamic-content__loader"></span>
+        </div>
+        <div class="l-article-recirc__video"></div>
+    </section>
+</div>
+
+
+
+
+<script type="text/injector-promo" data-obj-id="2" data-name="Daily" data-rate-limit="0.1">
+    <aside>
+    <form id="feature-injector-signup daily" class="feature-injector-signup" action="" method="post"  data-newsletter-signup="1">
+        <p class="feature-injector-text">
+            Like <em>​The Atlantic</em>? Subscribe to <strong>​</strong><a href="http://www.theatlantic.com/newsletters/daily/" target="_blank">The Atlantic Daily​</a>, our free weekday email newsletter.
+        </p>
+        <input type="hidden" name="newsletters" value="7581216"><input type="hidden" name="newsletterName" value="Atlantic Daily"><div class="injector-promo-input-container"><input class="injector-promo-input" type="email" name="email" class="email-address" placeholder="Enter your email"><input class="injector-promo-button" type="submit" value="Sign up"></div>
+        <p class="message"></p>
+    </form>
+</aside>
+
+</script>
+
+
+
+
+
+<script id="video-social-links-template" type="text/template">
+    <div class="article-embed-share">
+        <ul class="share social-icons round color">
+            <li><a href="#" class="facebook social-icon" data-share="facebook" data-share-text="<%= title %>" data-share-url="<%= original_url %>" data-omni-click="r'videoembedshare_fb',<%= video_id %>">
+            </a></li>
+
+            <li><a href="#" class="twitter social-icon" data-share="twitter" data-share-text="<%= title %>" data-share-url="<%= original_url %>" data-omni-click="r'videoembedshare_tw',<%= video_id %>" data-share-via="theatlantic">
+            </a></li>
+        </ul>
+    </div>
+</script>
+
+
+<script type="application/ld+json">[]</script>
+
+
+
+        
+            
+            <div id="janrain-screens" class="profile-screens"></div>
+        
+
+        
+          <div id="leaflets" class="l-article-recirc__leaflet l-article-recirc__leaflet--legacy u-dynamic-content lazyload" data-include="module:theatlantic/js/lacroix/components/leaflet">
+            <span class="u-dynamic-content__loader"></span>
+          </div>
+        
+
+        
+            <footer id="site-footer" class="c-footer lazyload" data-include="module:theatlantic/js/lacroix/components/footer" role="contentinfo">
+  <div class="c-footer__container">
+    <nav class="c-footer__nav c-footer__nav--top" id="site-footer-top-nav">
+      <ul class="c-footer__list c-footer__list--top">
+        <li class="c-footer__section">
+          <div class="c-footer__section-title">About</div>
+          <div class="c-footer__secondary" id="site-footer-about">
+            <ul class="c-footer__list c-footer__list--secondary">
+              <li class="c-footer__item c-footer__item--top">
+                <a class="c-footer__link" href="/history/">Our History</a>
+              </li>
+              <li class="c-footer__item c-footer__item--top">
+                <a class="c-footer__link" href="/masthead/">Staff</a>
+              </li>
+              <li class="c-footer__item c-footer__item--top">
+                <a class="c-footer__link" href="/jobs/">Careers</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="c-footer__section">
+          <div class="c-footer__section-title">Contact</div>
+          <div class="c-footer__secondary" id="site-footer-contact">
+            <ul class="c-footer__list c-footer__list--secondary">
+              <li class="c-footer__item c-footer__item--top">
+                <a class="c-footer__link" href="https://support.theatlantic.com/">Help Center</a>
+              </li>
+              <li class="c-footer__item c-footer__item--top">
+                <a class="c-footer__link" href="/contact/">Contact Us</a>
+              </li>
+              <li class="c-footer__item c-footer__item--top">
+                <a class="c-footer__link" href="https://atlanticbrandpartners.com/">Atlantic Brand Partners</a>
+              </li>
+              <li class="c-footer__item c-footer__item--top">
+                <a class="c-footer__link" href="/press/">Press</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="c-footer__section">
+          <div class="c-footer__section-title">Podcasts</div>
+          <div class="c-footer__secondary" id="site-footer-podcasts">
+            <ul class="c-footer__list c-footer__list--secondary">
+              <li class="c-footer__item c-footer__item--top">
+                <a class="c-footer__link" href="/podcasts/experiment/">The Experiment</a>
+              </li>
+              <li class="c-footer__item c-footer__item--top">
+                <a class="c-footer__link" href="/podcasts/socialdistance/">Social Distance&trade;</a>
+              </li>
+              <li class="c-footer__item c-footer__item--top">
+                <a class="c-footer__link" href="/podcasts/floodlines/">Floodlines</a>
+              </li>
+              <li class="c-footer__item c-footer__item--top">
+                <a class="c-footer__link" href="/podcasts/the-ticket/">The Ticket: Politics from <i>The Atlantic</i></a>
+              </li>
+              <li class="c-footer__item c-footer__item--top">
+                <a class="c-footer__link" href="/podcasts/crazygenius/">Crazy/Genius</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="c-footer__section">
+          <div class="c-footer__section-title">Subscription</div>
+          <div class="c-footer__secondary" id="site-footer-subscription">
+            <ul class="c-footer__list c-footer__list--secondary">
+              <li class="c-footer__item c-footer__item--top">
+                <a class="c-footer__link" href="/subscribe/footer-cover/">Purchase</a>
+              </li>
+              <li class="c-footer__item c-footer__item--top">
+                <a class="c-footer__link" href="/subscribe/footer-gift/">Give a Gift</a>
+              </li>
+              <li class="c-footer__item c-footer__item--top">
+                <a class="c-footer__link" href="https://accounts.theatlantic.com">Manage Subscription</a>
+              </li>
+              <li class="c-footer__item c-footer__item--top">
+                <a class="c-footer__link" href="/app/">Download iOS App</a>
+              </li>
+              <li class="c-footer__item c-footer__item--top">
+                <a class="c-footer__link" href="/newsletters/sign-up/">Newsletters</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="c-footer__section">
+          <div class="c-footer__section-title">Follow</div>
+          <div class="c-footer__secondary" id="site-footer-follow">
+            <ul class="c-footer__list c-footer__list--secondary c-footer__list--follow">
+              <li class="c-footer__item c-footer__item--follow">
+                <a class="c-footer__link" href="https://www.facebook.com/TheAtlantic" aria-label="Like us on Facebook" title="Like us on Facebook" rel="noopener" target="_blank">
+                  <svg alt="" class="o-icon c-footer__icon"
+
+  
+>
+  <use xlink:href="#icon-social-facebook"/>
+</svg>
+                </a>
+              </li>
+              <li class="c-footer__item c-footer__item--follow">
+                <a class="c-footer__link" href="https://www.instagram.com/theatlantic" aria-label="Follow us on Instagram" title="Follow us on Instagram" rel="noopener" target="_blank">
+                  <svg alt="" class="o-icon c-footer__icon"
+
+  
+>
+  <use xlink:href="#icon-social-instagram"/>
+</svg>
+                </a>
+              </li>
+              <li class="c-footer__item c-footer__item--follow">
+                <a class="c-footer__link" href="https://www.youtube.com/user/TheAtlantic" aria-label="Subscribe on YouTube" title="Subscribe on YouTube" rel="noopener" target="_blank">
+                  <svg alt="" class="o-icon c-footer__icon"
+
+  
+>
+  <use xlink:href="#icon-social-youtube"/>
+</svg>
+                </a>
+              </li>
+            </ul>
+            <ul class="c-footer__list c-footer__list--secondary c-footer__list--follow">
+              <li class="c-footer__item c-footer__item--follow">
+                <a class="c-footer__link" href="https://twitter.com/TheAtlantic" aria-label="Follow us on Twitter" title="Follow us on Twitter" rel="noopener" target="_blank">
+                  <svg alt="" class="o-icon c-footer__icon"
+
+  
+>
+  <use xlink:href="#icon-social-twitter"/>
+</svg>
+                </a>
+              </li>
+              <li class="c-footer__item c-footer__item--follow">
+                <a class="c-footer__link" href="https://www.linkedin.com/company/the-atlantic" aria-label="Connect with us on LinkedIn" title="Connect with us on LinkedIn" rel="noopener" target="_blank">
+                  <svg alt="" class="o-icon c-footer__icon"
+
+  
+>
+  <use xlink:href="#icon-social-linkedin"/>
+</svg>
+                </a>
+              </li>
+              <li class="c-footer__item c-footer__item--follow">
+                <a class="c-footer__link" href="https://flipboard.com/@theatlantic" aria-label="Follow us on Flipboard" title="Follow us on Flipboard" rel="noopener" target="_blank">
+                  <svg alt="" class="o-icon c-footer__icon"
+
+  
+>
+  <use xlink:href="#icon-social-flipboard"/>
+</svg>
+                </a>
+              </li>
+            </ul>
+            <ul class="c-footer__list c-footer__list--secondary c-footer__list--follow">
+              <li class="c-footer__item c-footer__item--follow">
+                <a class="c-footer__link" href="/feed/all/" aria-label="Subscribe to our RSS feed" title="Subscribe to our RSS feed" rel="noopener" target="_blank">
+                  <svg alt="" class="o-icon c-footer__icon"
+
+  
+>
+  <use xlink:href="#icon-social-rss"/>
+</svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <div class="c-footer__bottom" id="site-footer-bottom">
+      <div class="c-footer__bottom-info">
+        <nav class="c-footer__nav c-footer__nav--bottom" id="site-footer-bottom-nav">
+          <ul class="c-footer__list">
+            <li class="c-footer__item c-footer__item--bottom">
+              <a class="c-footer__link" href="/privacy-policy/">Privacy&nbsp;Policy</a>
+            </li>
+            <li class="c-footer__item c-footer__item--bottom">
+              <a class="c-footer__link" href="/do-not-sell-my-personal-information/" data-omni-click="inherit">Do Not Sell My Personal Information</a>
+            </li>
+            <li class="c-footer__item c-footer__item--bottom">
+              <a class="c-footer__link" href="https://cdn.theatlantic.com/static/front/docs/ads/TheAtlanticAdvertisingGuidelines.pdf?v1">Advertising&nbsp;Guidelines</a>
+            </li>
+            <li class="c-footer__item c-footer__item--bottom">
+              <a class="c-footer__link" href="/terms-and-conditions/">Terms&nbsp;Conditions</a>
+            </li>
+            <li class="c-footer__item c-footer__item--bottom">
+              <a class="c-footer__link" href="/responsible-disclosure-policy/">Responsible&nbsp;Disclosure</a>
+            </li>
+            
+            
+            <li class="c-footer__item c-footer__item--bottom">
+              <a class="c-footer__link" href="/site-map/">Site&nbsp;Map</a>
+            </li>
+          </ul>
+        </nav>
+        <p class="c-footer__copyright">
+          TheAtlantic.com Copyright (c) 2021 by The Atlantic Monthly Group. All Rights
+          Reserved.
+        </p>
+      </div>
+      <p class="c-footer__logo">
+          <a href="/" class="c-nav__link--lacroix" aria-label="the atlantic wordmark">
+            <svg class="c-footer__logo-image" viewBox="0 0 136 22">
+                <use xlink:href="#icon-atlantic-wordmark"></use>
+            </svg>
+          </a>
+      </p>
+    </div>
+  </div>
+</footer>
+        
+
+    
+    
+    <script>document.documentElement.classList.add('fonts-loaded');</script>
+</div>
+
+
+
+
+<script type="gpt-config">
+    {"globals": {"title": "how-aristotle-created-the-computer", "template_raw": "theatlantic/article.html", "id": 518697, "xpost": [], "src": "article", "type": "non-mag-reg", "cat": [], "motivation": null, "rubric": "technology"}, "zone": "/4624/theatlantic.web/technology/article_feature", "adtest_domain": "dctestsite", "lazy_load": 3, "prebid": "https://www.theatlantic.com/packages/adsjs/prebid.js", "outofpage": true, "ix": true, "amazon": "3239", "gdpr": false, "datePublished": "2017-03-20T08:00:00-04:00", "patchEventHandlers": true, "perfUrl": "https://data-cdn.theatlantic.com/perf.gif"}
+</script>
+
+<div id="outofpage"></div>
+
+
+
+
+    
+    <script>
+      (function() {
+        function hasOwnProp(o, k) {
+          return Object.prototype.hasOwnProperty.call(o, k);
+        }
+
+        function entries(o, cb) {
+          for (var k in o) { if (hasOwnProp(o, k)) cb(k, o[k]); }
+        }
+
+        var staticHashMap = {"js/bundle/lacroix/components": {"recirc-content": "72ad45203bca", "most-popular": "464c96124621", "editors-choice": "b147f52322e1", "footer": "38ac42ce2ffd", "leaflet": "ecb01f307a61"}, "js/bundle/components": {"navigation": "9aa8bd9b4e69", "recirc-content": "55e0f629eec3", "most-popular": "f40188675e32", "footer": "b786c9366121", "share-social": "82a5b5bfe1ef", "leaflet": "83b915696fd6", "related-video": "1cc3cbc704d7", "crossword": "d79bc14802f7", "newsletter-list": "bd1ff3d287c8", "house-creative-fallback": "2c346afb05af"}, "js/bundle/utils": {"debug": "b586f25ad369", "iframe-resizer": "3370001ddb00"}, "components/ads": {"article-desktop": "06d1de62d807", "article-house-desktop": "28eb02b78040", "article-house-mobile": "8ceb1fb99103", "article-mobile": "a0fa46ad03c5", "box": "c74dfd06a47e", "cineflex": "5f64a53865c3", "full-width-limit-height": "42f58bea2315", "logo": "32ba3ee6ba53", "native-desktop": "f1eef8981de3", "native-mobile": "60742fc3c69e", "native": "576ed2ddfdc4", "pixel": "c6d59540bd91", "rail": "fa03876bf18c", "standard-wide": "d9b7e4167c29"}, "components/editorial-project": {"header": "b38577e6a40f", "iframe": "ce10c1864e89", "image": "006db66394f2", "insertion-point": "086799fc589e", "promoted-article-group": "ae2f98a62bd4", "recirc-top": "ba4671bee162", "spotlight-article": "ba203cf645c6", "video": "6c6a32556f1d"}, "components/homepage": {"cover-story": "4ec377f71ad2", "feature": "101d7bc7edd7", "latest-videos": "031cbf7fc919", "latest": "d8eb6f84989b", "offlede": "0173cec4c9f1", "podcasts": "16844a723479", "popular": "23345accce06", "recent-issues": "83b5fe218d1e", "sections": "dc64e283580c", "writers": "7d61c269edc1", "ww3": "60c3baa1b7dc"}, "components/ideas": {"article-author": "7ddc8fcd844c", "article-header": "203063cc0f34", "article-meta": "ab3ee2f4ec2e", "dateline": "b1881667d416", "dek": "ff89d6bab604"}, "components/paywall": {"compressed-final": "6f36077d3051", "compressed-first": "b33e23f22083", "compressed-mid": "2a2baefc35c6", "expanded-final": "e2d7881fbee5", "expanded-mid": "7a93bce90f35", "nudge-icon-expand": "43aff433d04b", "nudge-login": "80b98e6ba797", "nudge-subscribe": "894e77de7247"}, "components/series-promos": {"floodlines": "87483ef123eb", "the-experiment": "e80c2ad3487c"}, "js/bundle": {"homepage": "d59436e15ca5", "editorial-projects": "fbe7067914ed"}, "components": {"_preview": "ac78b067a767", "accounts-modal": "438e2d9728f5", "ad": "024245f5440d", "article-header": "eda2a4f69813", "article-meta": "9b6067507dea", "article-writer": "76a15f7ffe67", "audio-embed": "0fa577febd22", "audio-emblazon": "37e75d2ea0b3", "book-review": "657b1fc6be91", "books-in-review": "fd0ca99d15ee", "breaking-news-holiday": "bf193afe43ba", "breaking-news": "23702219ea88", "button": "de85cab764a8", "byline": "c4a2e7652ccb", "card": "bc83539d2790", "categories": "fc820063a091", "dateline": "28fbf04d7fc0", "dek": "4cb6492a6962", "editors-choice": "8d4be1494071", "editors-note": "e535cefd0ce7", "expanded-nav-crossword": "e0dd5fbe1595", "expanded-nav-mobile-header": "831b83b35bcb", "expanded-nav-mobile-search": "690c6a37303f", "expanded-nav-print": "3874ab795dfc", "expanded-nav-sections": "1a346509d7e7", "expanded-nav": "21d27f5662e6", "footer": "78462cd48c02", "foundation-line": "8ac370b657ac", "gate": "a836dfba8d2d", "hero": "a88a631693a1", "icon": "7de19a51815e", "icons": "7a4b431d2397", "input": "a0cd2e424a5d", "lacroix-nav-desktop-search": "eb75f9acf8a4", "lacroix-navigation": "d30d4dadcd93", "lead-cinemagraph": "048372577558", "lead-embed": "f6268964937c", "lead-image": "d10ba239935a", "leaflet": "1c8bdef18d63", "letters-cta": "062c6702596e", "most-popular": "f9f1105f141f", "nav-desktop-search": "3bc1c5df347a", "nav-logo": "3bdc2ec152df", "nav-menu-list": "32faab0370a3", "nav-mobile-search": "2a2ef69fe9b3", "navigation": "04183f35c03d", "newsletter-list": "948751ec3e71", "newsletter": "599299310ed3", "newsletters-banner": "6f59ae607b45", "newsletters-header": "8fa0b327ad56", "non-metered-nudge": "7a0a0e098270", "nudge-compressed": "65725045d073", "nudge-expanded": "346397cd8a2d", "nudge-onboarding": "7f0ec3b54503", "pagination": "2b134bd89a78", "paywall": "6ebaca12d6a0", "picture": "bf6f61a29ec5", "recirc-content": "7cb94b5a34dc", "recirc-item": "fe5ca436c4f0", "related-video": "e8bf3aa71c6c", "review": "8172b8265d82", "river": "4647308c42d5", "rubric": "93c4375458ca", "section-header": "f6187942c1fc", "sentinel": "4b31a1465902", "share-social": "422eaab3d67e", "skip-link": "d49b2b2093f2", "social-links": "948812328306", "story-strip": "e3a92e898489", "story": "33368261be81", "tease-article": "61e2334760fa", "tease-audio": "b6395cbd1023", "trump50-hp": "75163a903d41"}, "sw": {"sw": "d41d8cd98f00"}, "js": {"bundle": "75af5083c828", "polyfill": "8a1a407318b2", "system": "07eef8932f1a", "legacy": "cc46b777ef8d", "hippo": "c076135a56b8"}, "juvenile-justice": {"juvenile-justice.min": "9053f07372b5"}};
+        var systemjsMap = {};
+
+        entries(staticHashMap, function(dir, files) {
+          entries(files, function(basename, hash) {
+            var path = 'dist/theatlantic/' + dir + '/' + basename;
+            systemjsMap[path + '.js'] = path + '.' + hash + '.js';
+          });
+        });
+
+        SystemJS.config({
+          baseURL: "https://cdn.theatlantic.com/tng/static/frontend/",
+          map: systemjsMap
+        });
+        SystemJS.set('pageInfo', SystemJS.newModule(window.Atlantic.page_info));
+        SystemJS.set('accountsConfig', SystemJS.newModule({
+          url: 'https://accounts.theatlantic.com'
+        }));
+        SystemJS.set('adsConfig', SystemJS.newModule({"globals": {"title": "how-aristotle-created-the-computer", "template_raw": "theatlantic/article.html", "id": 518697, "xpost": [], "src": "article", "type": "non-mag-reg", "cat": [], "motivation": null, "rubric": "technology"}, "zone": "/4624/theatlantic.web/technology/article_feature", "adtest_domain": "dctestsite", "lazy_load": 3, "prebid": "https://www.theatlantic.com/packages/adsjs/prebid.js", "outofpage": true, "ix": true, "amazon": "3239", "gdpr": false, "datePublished": "2017-03-20T08:00:00-04:00", "patchEventHandlers": true, "perfUrl": "https://data-cdn.theatlantic.com/perf.gif"}));
+      }());
+    </script>
+
+    <script type="text/javascript" src="https://cdn.theatlantic.com/tng/static/theatlantic/js/footer.min.090e47a934be.js" charset="utf-8"></script>
+
+
+
+<script type="text/javascript" src="https://cdn.theatlantic.com/tng/static/theatlantic/js/article.min.854d4d0e771c.js" charset="utf-8"></script>
+
+
+
+
+<!-- Scroll -->
+<script>
+  (function(a,c,d,e){if(!a[c]){var b=a[c]={};b[d]=[];b[e]=function(a){b[d].push(a)}}})(window,'Scroll','_q','do');
+  Scroll.config = {
+    orientation: 'bottom',
+    detected: document.cookie.indexOf("scroll0=") > -1
+  };
+</script>
+<script async src="https://static.scroll.com/js/scroll.js"></script>
+
+
+
+
+<!-- 2021-02-18T21:40:14.138690 -->
+<!-- PAGE_COMPLETED -->
+
+</body>
+</html>
