@@ -41,7 +41,7 @@ def home_view(request):
 class PostListView(ListView):
     model = PostFeed
     template_name = 'home.html'
-    context_object_name = 'feed'
+    context_object_name = 'post'
     ordering = ['-date_posted']
 
 class PostDetailView(DetailView):
